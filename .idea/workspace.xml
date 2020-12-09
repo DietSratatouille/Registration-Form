@@ -18,7 +18,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Reg-Form" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -39,10 +39,17 @@
       <workItem from="1607447311700" duration="1878000" />
       <workItem from="1607453053956" duration="648000" />
       <workItem from="1607460801768" duration="1125000" />
+      <workItem from="1607531947098" duration="1224000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1090" y="290" key="FileChooserDialogImpl" timestamp="1607531977315">
+      <screen x="64" y="0" width="1856" height="1080" />
+    </state>
+    <state x="1090" y="290" key="FileChooserDialogImpl/64.0.1856.1080@64.0.1856.1080" timestamp="1607531977315" />
   </component>
 </project>
