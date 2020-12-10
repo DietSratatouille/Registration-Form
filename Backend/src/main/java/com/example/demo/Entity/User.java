@@ -35,7 +35,20 @@ public class User {
     @Column(name = "hls")
     private String hls;
 
+    @Column(name="american_Indian")
+    private boolean americanIndian;
 
+    @Column(name="asian")
+    private boolean asian;
+
+    @Column(name="black")
+    private boolean black;
+
+    @Column(name="pacific")
+    private boolean pacific;
+
+    @Column(name="white")
+    private boolean white;
 
     @Column(name = "veteran")
     private String veteran;
@@ -49,7 +62,38 @@ public class User {
     @Column(name = "grad_Date")
     private String gradDate;
 
+    @Column(name="c_Plus")
+    private boolean cPlus;
 
+    @Column(name="c_Sharp")
+    private boolean cSharp;
+
+    @Column(name="java")
+    private boolean java;
+
+    @Column(name="javascript")
+    private boolean javascript;
+
+    @Column(name="python")
+    private boolean python;
+
+    @Column(name="php")
+    private boolean php;
+
+    @Column(name="r")
+    private boolean r;
+
+    @Column(name="ruby")
+    private boolean ruby;
+
+    @Column(name="swift")
+    private boolean swift;
+
+    @Column(name="other")
+    private boolean other;
+
+    @Column(name="noLang")
+    private boolean none;
 
     @Column(name = "relocate")
     private String relocate;
@@ -69,10 +113,16 @@ public class User {
     @Column(name = "referral")
     private String referral;
 
-    public User(String first, String last, String email, String telephoneNum,
-                String zipcode, String gender, String hls,
-                String veteran, String degree, String edu, String gradDate,
-                String relocate, String auth, String sponsorship,
+    public User(String first, String last, String email,
+                String telephoneNum, String zipcode, String gender,
+                String hls, boolean americanIndian, boolean asian,
+                boolean black, boolean pacific, boolean white,
+                String veteran, String degree, String edu,
+                String gradDate, boolean cPlus, boolean cSharp,
+                boolean java, boolean javascript, boolean python,
+                boolean php, boolean r, boolean ruby, boolean swift,
+                boolean other, boolean none, String relocate,
+                String auth, String sponsorship,
                 String startDate, String ad, String referral) {
         this.first = first;
         this.last = last;
@@ -81,12 +131,26 @@ public class User {
         this.zipcode = zipcode;
         this.gender = gender;
         this.hls = hls;
-
+        this.americanIndian = americanIndian;
+        this.asian = asian;
+        this.black = black;
+        this.pacific = pacific;
+        this.white = white;
         this.veteran = veteran;
         this.degree = degree;
         this.edu = edu;
         this.gradDate = gradDate;
-
+        this.cPlus = cPlus;
+        this.cSharp = cSharp;
+        this.java = java;
+        this.javascript = javascript;
+        this.python = python;
+        this.php = php;
+        this.r = r;
+        this.ruby = ruby;
+        this.swift = swift;
+        this.other = other;
+        this.none = none;
         this.relocate = relocate;
         this.auth = auth;
         this.sponsorship = sponsorship;
@@ -162,6 +226,46 @@ public class User {
         this.hls = hls;
     }
 
+    public boolean isAmericanIndian() {
+        return americanIndian;
+    }
+
+    public void setAmericanIndian(boolean americanIndian) {
+        this.americanIndian = americanIndian;
+    }
+
+    public boolean isAsian() {
+        return asian;
+    }
+
+    public void setAsian(boolean asian) {
+        this.asian = asian;
+    }
+
+    public boolean isBlack() {
+        return black;
+    }
+
+    public void setBlack(boolean black) {
+        this.black = black;
+    }
+
+    public boolean isPacific() {
+        return pacific;
+    }
+
+    public void setPacific(boolean pacific) {
+        this.pacific = pacific;
+    }
+
+    public boolean isWhite() {
+        return white;
+    }
+
+    public void setWhite(boolean white) {
+        this.white = white;
+    }
+
     public String getVeteran() {
         return veteran;
     }
@@ -192,6 +296,94 @@ public class User {
 
     public void setGradDate(String gradDate) {
         this.gradDate = gradDate;
+    }
+
+    public boolean iscPlus() {
+        return cPlus;
+    }
+
+    public void setcPlus(boolean cPlus) {
+        this.cPlus = cPlus;
+    }
+
+    public boolean iscSharp() {
+        return cSharp;
+    }
+
+    public void setcSharp(boolean cSharp) {
+        this.cSharp = cSharp;
+    }
+
+    public boolean isJava() {
+        return java;
+    }
+
+    public void setJava(boolean java) {
+        this.java = java;
+    }
+
+    public boolean isJavascript() {
+        return javascript;
+    }
+
+    public void setJavascript(boolean javascript) {
+        this.javascript = javascript;
+    }
+
+    public boolean isPython() {
+        return python;
+    }
+
+    public void setPython(boolean python) {
+        this.python = python;
+    }
+
+    public boolean isPhp() {
+        return php;
+    }
+
+    public void setPhp(boolean php) {
+        this.php = php;
+    }
+
+    public boolean isR() {
+        return r;
+    }
+
+    public void setR(boolean r) {
+        this.r = r;
+    }
+
+    public boolean isRuby() {
+        return ruby;
+    }
+
+    public void setRuby(boolean ruby) {
+        this.ruby = ruby;
+    }
+
+    public boolean isSwift() {
+        return swift;
+    }
+
+    public void setSwift(boolean swift) {
+        this.swift = swift;
+    }
+
+    public boolean isOther() {
+        return other;
+    }
+
+    public void setOther(boolean other) {
+        this.other = other;
+    }
+
+    public boolean isNone() {
+        return none;
+    }
+
+    public void setNone(boolean none) {
+        this.none = none;
     }
 
     public String getRelocate() {
@@ -253,10 +445,26 @@ public class User {
                 ", zipcode='" + zipcode + '\'' +
                 ", gender='" + gender + '\'' +
                 ", hls='" + hls + '\'' +
+                ", americanIndian=" + americanIndian +
+                ", asian=" + asian +
+                ", black=" + black +
+                ", pacific=" + pacific +
+                ", white=" + white +
                 ", veteran='" + veteran + '\'' +
                 ", degree='" + degree + '\'' +
                 ", edu='" + edu + '\'' +
                 ", gradDate='" + gradDate + '\'' +
+                ", cPlus=" + cPlus +
+                ", cSharp=" + cSharp +
+                ", java=" + java +
+                ", javascript=" + javascript +
+                ", python=" + python +
+                ", php=" + php +
+                ", r=" + r +
+                ", ruby=" + ruby +
+                ", swift=" + swift +
+                ", other=" + other +
+                ", none=" + none +
                 ", relocate='" + relocate + '\'' +
                 ", auth='" + auth + '\'' +
                 ", sponsorship='" + sponsorship + '\'' +

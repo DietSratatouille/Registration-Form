@@ -22,12 +22,26 @@ CREATE TABLE User (
                 gender VARCHAR(11) NOT NULL,
                 -- hispanic, latino, spanish  
                 hls VARCHAR(4) NOT NULL,
-                ethnicity INT NOT NULL,
+                american_Indian boolean NOT NULL,
+                asian boolean NOT NULL,
+                black boolean NOT NULL,
+                pacific boolean NOT NULL,
+                white boolean NOT NULL,
                 veteran VARCHAR(4) NOT NULL,
-                highest_Degree VARCHAR(4) NOT NULL,
-                edu VARCHAR(40) NOT NULL,
+                degree VARCHAR(25) NOT NULL,
+                edu VARCHAR(60) NOT NULL,
                 grad_Date VARCHAR(11) NOT NULL,
-                programming_Languages INT  NOT NULL,
+                c_Plus boolean NOT NULL,
+                c_Sharp boolean NOT NULL,
+                java boolean NOT NULL,
+                javascript boolean NOT NULL,
+                python boolean NOT NULL,
+                php boolean NOT NULL,
+                r boolean NOT NULL,
+                ruby boolean NOT NULL,
+                swift boolean NOT NULL,
+                other boolean NOT NULL,
+                no_Lang boolean NOT NULL,
 				relocate VARCHAR(10) NOT NULL,
                 auth_Work VARCHAR(11) NOT NULL,
 				sponsorship VARCHAR(11) NOT NULL,
@@ -38,44 +52,3 @@ CREATE TABLE User (
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE Ethnicity (
-                eth_Id INT AUTO_INCREMENT NOT NULL,
-                user_Id INT NOT NULL,
-                american_Indian VARCHAR(4) NOT NULL,
-                asian VARCHAR(4) NOT NULL,
-                black VARCHAR(4) NOT NULL,
-                pacific VARCHAR(4) NOT NULL,
-                white VARCHAR(4) NOT NULL,
-                PRIMARY KEY (eth_Id, user_Id)
-)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
-
-
-CREATE TABLE lang (
-                lang_Id INT AUTO_INCREMENT NOT NULL,
-                user_Id INT NOT NULL,
-                c_Plus VARCHAR(4) NOT NULL,
-                c_Sharp VARCHAR(4) NOT NULL,
-                java VARCHAR(4) NOT NULL,
-                javascript VARCHAR(4) NOT NULL,
-                python VARCHAR(4) NOT NULL,
-                php VARCHAR(4) NOT NULL,
-                r VARCHAR(4) NOT NULL,
-                ruby VARCHAR(4) NOT NULL,
-                swift VARCHAR(4) NOT NULL,
-                other VARCHAR(4) NOT NULL,
-                none VARCHAR(4) NOT NULL,
-                PRIMARY KEY (lang_Id, user_Id)
-)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
-
-
-ALTER TABLE Ethnicity ADD CONSTRAINT ethnicity_user_fk
-FOREIGN KEY (user_Id)
-REFERENCES User (user_Id)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION;
-
-ALTER TABLE lang ADD CONSTRAINT lang_user_fk
-FOREIGN KEY (user_Id)
-REFERENCES User (user_Id)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION;
