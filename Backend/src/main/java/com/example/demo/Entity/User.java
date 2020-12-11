@@ -15,10 +15,10 @@ public class User {
     private int userID;
 
     @Column(name = "first_Name")
-    private String first;
+    private String firstName;
 
     @Column(name = "last_Name")
-    private String last;
+    private String lastName;
 
     @Column(name = "email")
     private String email;
@@ -116,7 +116,7 @@ public class User {
     @Column(name = "referral")
     private String referral;
 
-    public User(String first, String last, String email,
+    public User(String firstName, String lastName, String email,
                 String telephoneNum, String zipcode, String gender,
                 String hls, boolean americanIndian, boolean asian,
                 boolean black, boolean pacific, boolean white, boolean isNonEthnic,
@@ -127,8 +127,8 @@ public class User {
                 boolean other, boolean none, String relocate,
                 String auth, String sponsorship,
                 String startDate, String ad, String referral) {
-        this.first = first;
-        this.last = last;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.telephoneNum = telephoneNum;
         this.zipcode = zipcode;
@@ -174,20 +174,20 @@ public class User {
         this.userID = userID;
     }
 
-    public String getFirst() {
-        return first;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst(String first) {
-        this.first = first;
+    public void setFirstName(String first) {
+        this.firstName = first;
     }
 
-    public String getLast() {
-        return last;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast(String last) {
-        this.last = last;
+    public void setLastName(String last) {
+        this.lastName = last;
     }
 
     public String getEmail() {
@@ -450,8 +450,8 @@ public class User {
     public String toString() {
         return "User{" +
                 "userID=" + userID +
-                ", first='" + first + '\'' +
-                ", last='" + last + '\'' +
+                ", first='" + firstName + '\'' +
+                ", last='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", telephoneNum='" + telephoneNum + '\'' +
                 ", zipcode='" + zipcode + '\'' +
