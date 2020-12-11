@@ -102,7 +102,7 @@ public class User {
     private String relocate;
 
     @Column(name = "auth_Work")
-    private String auth;
+    private String workAuthorization;
 
     @Column(name = "sponsorship")
     private String sponsorship;
@@ -125,7 +125,7 @@ public class User {
                 boolean java, boolean javascript, boolean python,
                 boolean php, boolean r, boolean ruby, boolean swift,
                 boolean other, boolean none, String relocate,
-                String auth, String sponsorship,
+                String workAuthorization, String sponsorship,
                 String startDate, String ad, String referral) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -156,7 +156,7 @@ public class User {
         this.other = other;
         this.none = none;
         this.relocate = relocate;
-        this.auth = auth;
+        this.workAuthorization = workAuthorization;
         this.sponsorship = sponsorship;
         this.startDate = startDate;
         this.ad = ad;
@@ -406,12 +406,12 @@ public class User {
         this.relocate = relocate;
     }
 
-    public String getAuth() {
-        return auth;
+    public String getWorkAuthorization() {
+        return workAuthorization;
     }
 
-    public void setAuth(String auth) {
-        this.auth = auth;
+    public void setWorkAuthorization(String auth) {
+        this.workAuthorization = auth;
     }
 
     public String getSponsorship() {
@@ -478,7 +478,7 @@ public class User {
                 ", other=" + other +
                 ", none=" + none +
                 ", relocate='" + relocate + '\'' +
-                ", auth='" + auth + '\'' +
+                ", auth='" + workAuthorization + '\'' +
                 ", sponsorship='" + sponsorship + '\'' +
                 ", startDate='" + startDate + '\'' +
                 ", ad='" + ad + '\'' +
