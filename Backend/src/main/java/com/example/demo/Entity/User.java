@@ -65,8 +65,8 @@ public class User {
     @Column(name = "grad_Date")
     private String gradDate;
 
-    @Column(name="c_Plus")
-    private boolean cPlus;
+    @Column(name="c_Plus_Plus")
+    private boolean cPlusPlus;
 
     @Column(name="c_Sharp")
     private boolean cSharp;
@@ -121,7 +121,7 @@ public class User {
                 String hls, boolean americanIndian, boolean asian,
                 boolean black, boolean pacific, boolean white, boolean isNonEthnic,
                 String veteran, String degree, String edu,
-                String gradDate, boolean cPlus, boolean cSharp,
+                String gradDate, boolean cPlusPlus, boolean cSharp,
                 boolean java, boolean javascript, boolean python,
                 boolean php, boolean r, boolean ruby, boolean swift,
                 boolean other, boolean none, String relocate,
@@ -144,7 +144,7 @@ public class User {
         this.degree = degree;
         this.edu = edu;
         this.gradDate = gradDate;
-        this.cPlus = cPlus;
+        this.cPlusPlus = cPlusPlus;
         this.cSharp = cSharp;
         this.java = java;
         this.javascript = javascript;
@@ -310,12 +310,12 @@ public class User {
         this.gradDate = gradDate;
     }
 
-    public boolean iscPlus() {
-        return cPlus;
+    public boolean iscCPlusPlus() {
+        return cPlusPlus;
     }
 
-    public void setcPlus(boolean cPlus) {
-        this.cPlus = cPlus;
+    public void setcCPlusPlus(boolean cPlus) {
+        this.cPlusPlus = cPlus;
     }
 
     public boolean iscSharp() {
@@ -466,7 +466,7 @@ public class User {
                 ", degree='" + degree + '\'' +
                 ", edu='" + edu + '\'' +
                 ", gradDate='" + gradDate + '\'' +
-                ", cPlus=" + cPlus +
+                ", cPlus=" + cPlusPlus +
                 ", cSharp=" + cSharp +
                 ", java=" + java +
                 ", javascript=" + javascript +
