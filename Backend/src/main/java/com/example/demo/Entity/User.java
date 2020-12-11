@@ -50,6 +50,9 @@ public class User {
     @Column(name="white")
     private boolean white;
 
+    @Column(name="non_Ethnic")
+    private boolean isNonEthnic;
+
     @Column(name = "veteran")
     private String veteran;
 
@@ -92,7 +95,7 @@ public class User {
     @Column(name="other")
     private boolean other;
 
-    @Column(name="noLang")
+    @Column(name="no_Lang")
     private boolean none;
 
     @Column(name = "relocate")
@@ -116,7 +119,7 @@ public class User {
     public User(String first, String last, String email,
                 String telephoneNum, String zipcode, String gender,
                 String hls, boolean americanIndian, boolean asian,
-                boolean black, boolean pacific, boolean white,
+                boolean black, boolean pacific, boolean white, boolean isNonEthnic,
                 String veteran, String degree, String edu,
                 String gradDate, boolean cPlus, boolean cSharp,
                 boolean java, boolean javascript, boolean python,
@@ -136,6 +139,7 @@ public class User {
         this.black = black;
         this.pacific = pacific;
         this.white = white;
+        this.isNonEthnic=isNonEthnic;
         this.veteran = veteran;
         this.degree = degree;
         this.edu = edu;
@@ -264,6 +268,14 @@ public class User {
 
     public void setWhite(boolean white) {
         this.white = white;
+    }
+
+    public boolean isNonEthnic() {
+        return isNonEthnic;
+    }
+
+    public void setNonEthnic(boolean nonEthnic) {
+        isNonEthnic = nonEthnic;
     }
 
     public String getVeteran() {
