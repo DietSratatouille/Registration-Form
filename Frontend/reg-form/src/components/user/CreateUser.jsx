@@ -40,7 +40,8 @@ class User extends Component {
             sponsorship: '',
             startDate: '',
             ad: '',
-            referral: ''
+            referral: '',
+            file: ''
 
 
             // store booleans to list for check box use?
@@ -111,7 +112,8 @@ class User extends Component {
             sponsorship: this.state.sponsorship,
             startDate: this.state.startDate,
             ad: this.state.ad,
-            referral: this.state.referral
+            referral: this.state.referral,
+            file: this.state.file
         }
         // data service call goes here
         UserDataServices.createUser(user)
@@ -121,7 +123,7 @@ class User extends Component {
                     console.log({user:response.data})
                 }
             )
-        console.log(user.edu)
+        //console.log(user.edu)
 
 
     }
@@ -132,7 +134,7 @@ class User extends Component {
                 <h1 style={{textAlign:"center", alignContent:"40%"}}>Pyramid Academy Registration</h1><br></br>
 
                     <form onSubmit={this.createUser}>
-                        <div className="form-group" style={{textAlign:"center"}} >
+                        <div className="form-group">
                         <label className="form-check-label">1. First Name*
                             <br/>
                             <input
@@ -202,7 +204,7 @@ class User extends Component {
                         </label>
                         <br />
                         <br/>
-
+                        
                         <label className="form-check-label">6. What gender do you identify as? (if any)
                             <br/>
                             <input
@@ -735,6 +737,24 @@ style={{}}                                type="checkbox"
                                 placeholder="Enter your answer"
                                 onChange={this.handleChange}
                             />
+                        </label>
+                        <br/>
+                        <br/>
+
+                        <label>20. Upload your updated resume.*
+                            <br/>
+                            <div className="custom-file">
+                                <input
+                                    type="file"
+                                    name="file"
+                                    value={this.state.file}
+                                    className="custom-file-input"
+                                    id="file" required
+                                    onChange={this.handleChange}
+                                />
+                                    <label className="custom-file-label" htmlFor="file">Upload a file.. </label>
+                                    <div className="invalid-feedback">Invalid file feedback</div>
+                            </div>
                         </label>
                         <br/>
                         <br/>
