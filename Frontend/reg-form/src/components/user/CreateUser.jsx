@@ -134,7 +134,7 @@ class User extends Component {
                 <h1 style={{textAlign:"center", alignContent:"40%"}}>Pyramid Academy Registration</h1><br></br>
 
                     <form onSubmit={this.createUser}>
-                        <div className="form-group" style={{textAlign:"center"}} >
+                        <div className="form-group">
                         <label className="form-check-label">1. First Name*
                             <br/>
                             <input
@@ -204,7 +204,7 @@ class User extends Component {
                         </label>
                         <br />
                         <br/>
-
+                        
                         <label className="form-check-label">6. What gender do you identify as? (if any)
                             <br/>
                             <input
