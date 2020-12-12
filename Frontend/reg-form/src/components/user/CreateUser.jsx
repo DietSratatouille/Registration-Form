@@ -40,7 +40,8 @@ class User extends Component {
             sponsorship: '',
             startDate: '',
             ad: '',
-            referral: ''
+            referral: '',
+            file: ''
 
 
             // store booleans to list for check box use?
@@ -111,7 +112,8 @@ class User extends Component {
             sponsorship: this.state.sponsorship,
             startDate: this.state.startDate,
             ad: this.state.ad,
-            referral: this.state.referral
+            referral: this.state.referral,
+            file: this.state.file
         }
         // data service call goes here
         UserDataServices.createUser(user)
@@ -735,6 +737,24 @@ style={{}}                                type="checkbox"
                                 placeholder="Enter your answer"
                                 onChange={this.handleChange}
                             />
+                        </label>
+                        <br/>
+                        <br/>
+
+                        <label>20. Upload your updated resume.*
+                            <br/>
+                            <div className="custom-file">
+                                <input
+                                    // className="form-control"
+                                    type="file"
+                                    value={this.state.file}
+                                    className="custom-file-input"
+                                    id="file" required
+                                    onChange={this.handleChange}
+                                />
+                                    <label className="custom-file-label" htmlFor="file">Upload a file.. </label>
+                                    <div className="invalid-feedback">Invalid file feedback</div>
+                            </div>
                         </label>
                         <br/>
                         <br/>
