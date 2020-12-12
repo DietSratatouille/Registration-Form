@@ -15,10 +15,10 @@ public class User {
     private int userID;
 
     @Column(name = "first_Name")
-    private String first;
+    private String firstName;
 
     @Column(name = "last_Name")
-    private String last;
+    private String lastName;
 
     @Column(name = "email")
     private String email;
@@ -63,10 +63,10 @@ public class User {
     private String edu;
 
     @Column(name = "grad_Date")
-    private String gradDate;
+    private String graduationDate;
 
-    @Column(name="c_Plus")
-    private boolean cPlus;
+    @Column(name="c_Plus_Plus")
+    private boolean cPlusPlus;
 
     @Column(name="c_Sharp")
     private boolean cSharp;
@@ -102,7 +102,7 @@ public class User {
     private String relocate;
 
     @Column(name = "auth_Work")
-    private String auth;
+    private String workAuthorization;
 
     @Column(name = "sponsorship")
     private String sponsorship;
@@ -116,19 +116,19 @@ public class User {
     @Column(name = "referral")
     private String referral;
 
-    public User(String first, String last, String email,
+    public User(String firstName, String lastName, String email,
                 String telephoneNum, String zipcode, String gender,
                 String hls, boolean americanIndian, boolean asian,
                 boolean black, boolean pacific, boolean white, boolean isNonEthnic,
                 String veteran, String degree, String edu,
-                String gradDate, boolean cPlus, boolean cSharp,
+                String graduationDate, boolean cPlusPlus, boolean cSharp,
                 boolean java, boolean javascript, boolean python,
                 boolean php, boolean r, boolean ruby, boolean swift,
                 boolean other, boolean none, String relocate,
-                String auth, String sponsorship,
+                String workAuthorization, String sponsorship,
                 String startDate, String ad, String referral) {
-        this.first = first;
-        this.last = last;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.telephoneNum = telephoneNum;
         this.zipcode = zipcode;
@@ -143,8 +143,8 @@ public class User {
         this.veteran = veteran;
         this.degree = degree;
         this.edu = edu;
-        this.gradDate = gradDate;
-        this.cPlus = cPlus;
+        this.graduationDate = graduationDate;
+        this.cPlusPlus = cPlusPlus;
         this.cSharp = cSharp;
         this.java = java;
         this.javascript = javascript;
@@ -156,7 +156,7 @@ public class User {
         this.other = other;
         this.none = none;
         this.relocate = relocate;
-        this.auth = auth;
+        this.workAuthorization = workAuthorization;
         this.sponsorship = sponsorship;
         this.startDate = startDate;
         this.ad = ad;
@@ -174,20 +174,20 @@ public class User {
         this.userID = userID;
     }
 
-    public String getFirst() {
-        return first;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst(String first) {
-        this.first = first;
+    public void setFirstName(String first) {
+        this.firstName = first;
     }
 
-    public String getLast() {
-        return last;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast(String last) {
-        this.last = last;
+    public void setLastName(String last) {
+        this.lastName = last;
     }
 
     public String getEmail() {
@@ -302,20 +302,20 @@ public class User {
         this.edu = edu;
     }
 
-    public String getGradDate() {
-        return gradDate;
+    public String getGraduationDate() {
+        return graduationDate;
     }
 
-    public void setGradDate(String gradDate) {
-        this.gradDate = gradDate;
+    public void setGraduationDate(String gradDate) {
+        this.graduationDate = gradDate;
     }
 
-    public boolean iscPlus() {
-        return cPlus;
+    public boolean iscCPlusPlus() {
+        return cPlusPlus;
     }
 
-    public void setcPlus(boolean cPlus) {
-        this.cPlus = cPlus;
+    public void setcCPlusPlus(boolean cPlus) {
+        this.cPlusPlus = cPlus;
     }
 
     public boolean iscSharp() {
@@ -406,12 +406,12 @@ public class User {
         this.relocate = relocate;
     }
 
-    public String getAuth() {
-        return auth;
+    public String getWorkAuthorization() {
+        return workAuthorization;
     }
 
-    public void setAuth(String auth) {
-        this.auth = auth;
+    public void setWorkAuthorization(String auth) {
+        this.workAuthorization = auth;
     }
 
     public String getSponsorship() {
@@ -450,8 +450,8 @@ public class User {
     public String toString() {
         return "User{" +
                 "userID=" + userID +
-                ", first='" + first + '\'' +
-                ", last='" + last + '\'' +
+                ", first='" + firstName + '\'' +
+                ", last='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", telephoneNum='" + telephoneNum + '\'' +
                 ", zipcode='" + zipcode + '\'' +
@@ -465,8 +465,8 @@ public class User {
                 ", veteran='" + veteran + '\'' +
                 ", degree='" + degree + '\'' +
                 ", edu='" + edu + '\'' +
-                ", gradDate='" + gradDate + '\'' +
-                ", cPlus=" + cPlus +
+                ", gradDate='" + graduationDate + '\'' +
+                ", cPlus=" + cPlusPlus +
                 ", cSharp=" + cSharp +
                 ", java=" + java +
                 ", javascript=" + javascript +
@@ -478,7 +478,7 @@ public class User {
                 ", other=" + other +
                 ", none=" + none +
                 ", relocate='" + relocate + '\'' +
-                ", auth='" + auth + '\'' +
+                ", auth='" + workAuthorization + '\'' +
                 ", sponsorship='" + sponsorship + '\'' +
                 ", startDate='" + startDate + '\'' +
                 ", ad='" + ad + '\'' +
