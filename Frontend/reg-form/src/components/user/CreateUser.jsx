@@ -123,7 +123,7 @@ class User extends Component {
                     console.log({user:response.data})
                 }
             )
-        console.log(user.edu)
+        //console.log(user.edu)
 
 
     }
@@ -745,8 +745,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <div className="custom-file">
                                 <input
-                                    // className="form-control"
                                     type="file"
+                                    name="file"
                                     value={this.state.file}
                                     className="custom-file-input"
                                     id="file" required
