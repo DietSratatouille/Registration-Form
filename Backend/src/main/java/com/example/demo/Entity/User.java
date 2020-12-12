@@ -116,6 +116,9 @@ public class User {
     @Column(name = "referral")
     private String referral;
 
+    @Column(name = "resume_File")
+    private String file;
+
     public User(String firstName, String lastName, String email,
                 String telephoneNum, String zipcode, String gender,
                 String hls, boolean americanIndian, boolean asian,
@@ -126,7 +129,7 @@ public class User {
                 boolean php, boolean r, boolean ruby, boolean swift,
                 boolean other, boolean none, String relocate,
                 String workAuthorization, String sponsorship,
-                String startDate, String ad, String referral) {
+                String startDate, String ad, String referral, String file) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -161,6 +164,7 @@ public class User {
         this.startDate = startDate;
         this.ad = ad;
         this.referral = referral;
+        this.file = file;
     }
 
     public User() {
@@ -178,16 +182,16 @@ public class User {
         return firstName;
     }
 
-    public void setFirstName(String first) {
-        this.firstName = first;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String last) {
-        this.lastName = last;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -306,16 +310,16 @@ public class User {
         return graduationDate;
     }
 
-    public void setGraduationDate(String gradDate) {
-        this.graduationDate = gradDate;
+    public void setGraduationDate(String graduationDate) {
+        this.graduationDate = graduationDate;
     }
 
-    public boolean iscCPlusPlus() {
+    public boolean iscPlusPlus() {
         return cPlusPlus;
     }
 
-    public void setcCPlusPlus(boolean cPlus) {
-        this.cPlusPlus = cPlus;
+    public void setcPlusPlus(boolean cPlusPlus) {
+        this.cPlusPlus = cPlusPlus;
     }
 
     public boolean iscSharp() {
@@ -410,8 +414,8 @@ public class User {
         return workAuthorization;
     }
 
-    public void setWorkAuthorization(String auth) {
-        this.workAuthorization = auth;
+    public void setWorkAuthorization(String workAuthorization) {
+        this.workAuthorization = workAuthorization;
     }
 
     public String getSponsorship() {
@@ -446,12 +450,20 @@ public class User {
         this.referral = referral;
     }
 
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "userID=" + userID +
-                ", first='" + firstName + '\'' +
-                ", last='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", telephoneNum='" + telephoneNum + '\'' +
                 ", zipcode='" + zipcode + '\'' +
@@ -462,11 +474,12 @@ public class User {
                 ", black=" + black +
                 ", pacific=" + pacific +
                 ", white=" + white +
+                ", isNonEthnic=" + isNonEthnic +
                 ", veteran='" + veteran + '\'' +
                 ", degree='" + degree + '\'' +
                 ", edu='" + edu + '\'' +
-                ", gradDate='" + graduationDate + '\'' +
-                ", cPlus=" + cPlusPlus +
+                ", graduationDate='" + graduationDate + '\'' +
+                ", cPlusPlus=" + cPlusPlus +
                 ", cSharp=" + cSharp +
                 ", java=" + java +
                 ", javascript=" + javascript +
@@ -478,11 +491,12 @@ public class User {
                 ", other=" + other +
                 ", none=" + none +
                 ", relocate='" + relocate + '\'' +
-                ", auth='" + workAuthorization + '\'' +
+                ", workAuthorization='" + workAuthorization + '\'' +
                 ", sponsorship='" + sponsorship + '\'' +
                 ", startDate='" + startDate + '\'' +
                 ", ad='" + ad + '\'' +
                 ", referral='" + referral + '\'' +
+                ", file='" + file + '\'' +
                 '}';
     }
 }
