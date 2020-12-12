@@ -11,7 +11,7 @@ class User extends Component {
             lastName: '',
             email: '',
             telephoneNum: '',
-            zip: '',
+            zipcode: '',
             gender: '',
             hls: '',
             americanIndian: false,
@@ -24,7 +24,7 @@ class User extends Component {
             degree: '',
             edu: '',
             graduationDate: '',
-            cPlus: false,
+            cPlusPlus: false,
             cSharp: false,
             java: false,
             javascript: false,
@@ -61,6 +61,7 @@ class User extends Component {
     handleChange(event){
         const {name, value, type, checked} = event.target
         type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]: value })
+        console.log({[name]: value})
     }
 
 
@@ -81,7 +82,7 @@ class User extends Component {
             lastName: this.state.lastName,
             email: this.state.email,
             telephoneNum: this.state.telephoneNum,
-            zip: this.state.zip,
+            zipcode: this.state.zipcode,
             gender: this.state.gender,
             hls: this.state.hls,
             americanIndian: this.state.americanIndian,
@@ -94,7 +95,7 @@ class User extends Component {
             degree: this.state.degree,
             edu: this.state.edu,
             graduationDate: this.state.graduationDate,
-            cPlus: this.state.cPlus,
+            cPlusPlus: this.state.cPlusPlus,
             cSharp: this.state.cSharp,
             java: this.state.java,
             javascript: this.state.javascript,
@@ -120,6 +121,7 @@ class User extends Component {
                     console.log({user:response.data})
                 }
             )
+        console.log(user.edu)
 
 
     }
@@ -192,8 +194,8 @@ class User extends Component {
                             <input
                                 className="form-control "
                                 type="text"
-                                value={this.state.zip}
-                                name="zip"
+                                value={this.state.zipcode}
+                                name="zipcode"
                                 placeholder="Enter your answer here"
                                 onChange={this.handleChange}
                             />
@@ -419,8 +421,10 @@ style={{}}                                type="checkbox"
                                 name="edu"
                                 placeholder="Enter your answer here"
                                 onChange={this.handleChange}
+
                             />
                         </label>
+
                         <br/>
                         <br/>
 
@@ -444,8 +448,8 @@ style={{}}                                type="checkbox"
                                 className="form-check-input"
 
 style={{}}                                type="checkbox"
-                                name="cPlus"
-                                checked={this.state.cPlus}
+                                name="cPlusPlus"
+                                checked={this.state.cPlusPlus}
                                 onChange={this.handleChange}
                             />C++
                             <br/>
@@ -601,8 +605,36 @@ style={{}}                                type="checkbox"
                             /> No
                         </label>
                         <br/>
+                        <br/>
 
-                        <label className="form-check-label">16. What is the earliest date you are available or interested in joining Pyramid Academy?*
+                        <label className="form-check-label">16. Will you now or in the future require Pyramid Academy to commence (“sponsor”)
+                            an immigration case in order to employ you (for example, H-1B or other employment-based immigration case)?
+                            This is sometimes called “sponsorship” for an employment-based visa status.*
+                            <br/>
+                            <input
+                                className="form-check-input "
+                                style={{}}
+                                type="radio"
+                                name="sponsorship"
+                                value="Yes"
+                                checked={this.state.sponsorship === "Yes"}
+                                onChange={this.handleChange}
+                            />Yes
+                            <br/>
+                            <input
+                                className="form-check-input "
+                                style={{}}
+                                type="radio"
+                                name="sponsorship"
+                                value="No"
+                                checked={this.state.sponsorship === "No"}
+                                onChange={this.handleChange}
+                            />No
+                        </label>
+                        <br/>
+                        <br/>
+
+                        <label className="form-check-label">17. What is the earliest date you are available or interested in joining Pyramid Academy?*
                             <br/>
                             <input
                                 className="form-control "
@@ -616,7 +648,7 @@ style={{}}                                type="checkbox"
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">17. How did you hear about us?*
+                        <label className="form-check-label">18. How did you hear about us?*
                             <br/>
                             <input
                                 className="form-check-input "
@@ -693,7 +725,7 @@ style={{}}                                type="checkbox"
                         <br/>
                         <br/>
 
-                        <label>17. If someone referred you, what is their name?
+                        <label>19. If someone referred you, what is their name?
                             <br/>
                             <input
                                 className="form-control "

@@ -3,7 +3,7 @@ import axios from 'axios'
 class UserDataServices {
     //POST Request(s)
     createUser(user){
-        return axios.get(`http://localhost:8080/create`, user)
+        return axios.post(`http://localhost:8080/create`, user)
     }
 }
 

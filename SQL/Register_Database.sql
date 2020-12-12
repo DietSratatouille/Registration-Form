@@ -7,8 +7,7 @@ USE `registerdatabase`;
 -- Table structure for table `lang`
 --
 
-DROP TABLE IF EXISTS `lang`;
-DROP TABLE IF EXISTS `Ethnicity`;
+
 DROP TABLE IF EXISTS `User`;
 
 
@@ -27,11 +26,12 @@ CREATE TABLE User (
                 black boolean NOT NULL,
                 pacific boolean NOT NULL,
                 white boolean NOT NULL,
+                non_Ethnic boolean NOT NULL,
                 veteran VARCHAR(4) NOT NULL,
                 degree VARCHAR(25) NOT NULL,
                 edu VARCHAR(60) NOT NULL,
                 grad_Date VARCHAR(11) NOT NULL,
-                c_Plus boolean NOT NULL,
+                c_Plus_Plus boolean NOT NULL,
                 c_Sharp boolean NOT NULL,
                 java boolean NOT NULL,
                 javascript boolean NOT NULL,
