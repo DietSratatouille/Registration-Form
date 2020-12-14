@@ -3,6 +3,7 @@ package com.example.demo.Entity;
 
 
 import javax.persistence.*;
+import java.io.File;
 
 
 @Entity
@@ -119,6 +120,7 @@ public class User {
     @Column(name = "resume_File")
     private String file;
 
+
     public User(String firstName, String lastName, String email,
                 String telephoneNum, String zipcode, String gender,
                 String hls, boolean americanIndian, boolean asian,
@@ -165,6 +167,7 @@ public class User {
         this.ad = ad;
         this.referral = referral;
         this.file = file;
+
     }
 
     public User() {
@@ -457,6 +460,7 @@ public class User {
     public void setFile(String file) {
         this.file = file;
     }
+
 
     @Override
     public String toString() {
