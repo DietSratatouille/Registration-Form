@@ -41,7 +41,8 @@ class User extends Component {
             startDate: '',
             ad: '',
             referral: '',
-            file: ''
+            //file: ''
+            file: null
 
 
             // store booleans to list for check box use?
@@ -134,6 +135,7 @@ class User extends Component {
                 <h1 style={{textAlign:"center", alignContent:"40%"}}>Pyramid Academy Registration</h1><br></br>
 
                     <form onSubmit={this.createUser}>
+                        {/*<div className="jumbotron table" style={{textAlign:"left"}}>*/}
                         <div className="form-group">
                         <label className="form-check-label">1. First Name*
                             <br/>

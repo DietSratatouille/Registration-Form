@@ -1,0 +1,25 @@
+To do list:
+
+·       [Ed/Sterling] Add a few missing fields to the form:
+
+o   Sponsorship question on current form
+
+o   Major – add this after highest degree completed (don’t know if I mentioned that)
+
+o   Resume
+
+·       [Ed/Sterling] Add drop-down lists to major & school only from these lists here
+
+·       [Ed/Sterling] Make sure all fields are required other than gender, ethnicity, and race
+
+·       [Ed/Sterling] Look into options for data capture & sharing
+
+o   Ensure that submission date is included in the data that I access
+
+o   I attached the current form data in this email
+
+·       [Ed/Sterling] Improve UI
+
+·       [Somya] Look into the format for resume files
+
+·       [Somya] Validate language with HR
