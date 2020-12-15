@@ -77,8 +77,8 @@ class ListUsers extends Component{
                         {
                             this.state.users.map(
                                 users =>
-                                    <tr style={{textAlign: "left"}} key={users.id}>
-                                        <td>{users.id}</td>
+                                    <tr style={{textAlign: "left"}} key={users.userID}>
+                                        <td>{users.userID}</td>
                                         <td>{users.firstName}</td>
                                         <td>{users.lastName}</td>
                                         <td>{users.email}</td>
@@ -91,7 +91,7 @@ class ListUsers extends Component{
                                         <td>{users.black.toString()}</td>
                                         <td>{users.pacific.toString()}</td>
                                         <td>{users.white.toString()}</td>
-                                        <td>{users.nonEthnic.toString()}</td>
+                                        <td>{users.nonEthnic}</td>
                                         <td>{users.veteran}</td>
                                         <td>{users.degree}</td>
                                         <td>{users.edu}</td>

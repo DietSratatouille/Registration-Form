@@ -1,22 +1,25 @@
-To do list:
-C= Complete
-WIP = Work in Progress
+TO-DO LIST:
+___________________________________
+|Legend:                          |
+|	-C = Complete             |
+|	-WIP = Work in Progress   |
+|	-TBD = To be Determined   |
+|                                 |
+|_________________________________|
 
-·   Sterling] Add a few missing fields to the form:
+[C]   [Sterling] Add a few missing fields to the form:
 
-C   Sponsorship question on current form
+[C]   Sponsorship question on current form
 
-WIP   Major – add this after highest degree completed (don’t know if I mentioned that)
+[WIP]   Major – add this after highest degree completed (don’t know if I mentioned that)
 
-o   Resume
+[WIP]       [Sterling] Add drop-down lists to major & school only from these lists here
 
-WIP       [Sterling] Add drop-down lists to major & school only from these lists here
+[WIP]       [Sterling] Make sure all fields are required other than gender, ethnicity, and race
 
-WIP       [Sterling] Make sure all fields are required other than gender, ethnicity, and race
+[WIP]       [Ed] Look into options for data capture & sharing
 
-WIP       [Ed] Look into options for data capture & sharing
+[TBD]   Ensure that submission date is included in the data that I access
 
-WIP[TBD]   Ensure that submission date is included in the data that I access
 
-o   I attached the current form data in this email
 

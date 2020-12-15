@@ -6,7 +6,7 @@ class User extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            //id: '' ,
+            userID: '' ,
             firstName: '',
             lastName: '',
             email: '',
@@ -55,9 +55,6 @@ class User extends Component {
     }
 
     //component mount
-    componentDidMount() {
-        this.createUser()
-    }
 
     // handle change
     handleChange(event){
@@ -79,7 +76,7 @@ class User extends Component {
     createUser(){
         let user = {
             //states below
-            //id: this.state.id,
+            userID: this.state.userID,
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             email: this.state.email,
@@ -124,7 +121,7 @@ class User extends Component {
                     console.log({user:response.data})
                 }
             )
-        console.log(user.file)
+        //console.log(user.file)
 
 
     }
@@ -765,7 +762,7 @@ style={{}}                                type="checkbox"
                                     name="file"
                                     value={this.state.file}
                                     className="custom-file-input"
-                                    id="file" required
+                                    id="file" /*required*/
                                     onChange={this.handleChange}
                                 />
                                     <label className="custom-file-label" htmlFor="file">Upload a file.. </label>
