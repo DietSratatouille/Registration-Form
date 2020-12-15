@@ -117,8 +117,7 @@ public class User {
     @Column(name = "referral")
     private String referral;
 
-    @Column(name = "resume_File")
-    private String file;
+  
 
 
     public User(String firstName, String lastName, String email,
@@ -131,7 +130,7 @@ public class User {
                 boolean php, boolean r, boolean ruby, boolean swift,
                 boolean other, boolean none, String relocate,
                 String workAuthorization, String sponsorship,
-                String startDate, String ad, String referral, String file) {
+                String startDate, String ad, String referral) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -166,8 +165,7 @@ public class User {
         this.startDate = startDate;
         this.ad = ad;
         this.referral = referral;
-        this.file = file;
-
+       
     }
 
     public User() {
@@ -453,13 +451,6 @@ public class User {
         this.referral = referral;
     }
 
-    public String getFile() {
-        return file;
-    }
-
-    public void setFile(String file) {
-        this.file = file;
-    }
 
 
     @Override
@@ -500,7 +491,6 @@ public class User {
                 ", startDate='" + startDate + '\'' +
                 ", ad='" + ad + '\'' +
                 ", referral='" + referral + '\'' +
-                ", file='" + file + '\'' +
                 '}';
     }
 }
