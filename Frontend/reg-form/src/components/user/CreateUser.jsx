@@ -124,7 +124,7 @@ class User extends Component {
                     console.log({user:response.data})
                 }
             )
-        //console.log(user.edu)
+        console.log(user.file)
 
 
     }
