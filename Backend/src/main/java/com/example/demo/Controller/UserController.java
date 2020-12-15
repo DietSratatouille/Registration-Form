@@ -2,7 +2,7 @@ package com.example.demo.Controller;
 
 import com.example.demo.Entity.User;
 import com.example.demo.Repository.UserRepository;
-import com.example.demo.SendFileEmail;
+import com.example.demo.Send.SendFileEmail;
 import com.example.demo.Services.UserServices;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +22,7 @@ public class UserController {
     @PostMapping("/create")
     public String createUser(@RequestBody User user) throws InterruptedException {
 
-        SendFileEmail f = new SendFileEmail(user.getFirstName(),user.getLastName(),user.getFile());
+        SendFileEmail f = new SendFileEmail(user.getFirstName(),user.getLastName());
 
 
           return userServices.saveUser(user);

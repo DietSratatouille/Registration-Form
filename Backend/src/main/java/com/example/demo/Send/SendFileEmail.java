@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Send;
 
 
 import javax.activation.DataHandler;
@@ -16,16 +16,17 @@ import java.util.Properties;
 public class SendFileEmail {
     String name;
     String fileName;
-        public SendFileEmail(String first,String last, String filename){
+
+        public SendFileEmail(String first,String last){
             name= first+" "+last;
-            this.fileName=filename;
+            fileName=name+" resume";
         }
         public void sendEmail() {
             // Recipient's email ID needs to be mentioned.
             String to = "sterlingtyson97@gmail.com";
 
             // Sender's email ID needs to be mentioned
-            String from = "edwardcochran23@gmail.com";
+            String from = "sterling.edward2020@gmail.com";
 
             // Assuming you are sending email from localhost
             String host = "smtp.gmail.com";
@@ -48,6 +49,7 @@ public class SendFileEmail {
                 protected PasswordAuthentication getPasswordAuthentication() {
                     return new PasswordAuthentication(from,env.get("appKey"));
                 }
+
             });
 
             try {
