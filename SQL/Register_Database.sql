@@ -48,7 +48,6 @@ CREATE TABLE User (
 				start_Date VARCHAR(11) NOT NULL,
                 ad VARCHAR (40) NOT NULL,
 				referral VARCHAR (40) NOT NULL,
-                resume_File LONGTEXT NOT NULL,
                 PRIMARY KEY (user_Id)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
