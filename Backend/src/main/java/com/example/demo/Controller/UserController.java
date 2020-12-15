@@ -2,7 +2,7 @@ package com.example.demo.Controller;
 
 import com.example.demo.Entity.User;
 import com.example.demo.Repository.UserRepository;
-import com.example.demo.Send.SendFileEmail;
+import com.example.demo.Send.PDFLoader;
 import com.example.demo.Services.UserServices;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +21,9 @@ public class UserController {
 
     @PostMapping("/create")
     public String createUser(@RequestBody User user) throws InterruptedException {
-
-        SendFileEmail f = new SendFileEmail(user.getFirstName(),user.getLastName());
+        PDFLoader pdf = new PDFLoader(user.getFirstName(),user.getLastName());
+        pdf.loadPDF();
+        //SendFileEmail f = new SendFileEmail(user.getFirstName(),user.getLastName());
 
 
           return userServices.saveUser(user);
