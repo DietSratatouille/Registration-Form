@@ -17,9 +17,15 @@ public class SendFileEmail {
     String name;
     String fileName;
 
+
         public SendFileEmail(String first,String last){
             name= first+" "+last;
             fileName=name+" resume";
+        }
+
+        public SendFileEmail(String first,String last, String fileName){
+            name= first+" "+last;
+            this.fileName=fileName;
         }
         public void sendEmail() {
             // Recipient's email ID needs to be mentioned.
@@ -43,13 +49,11 @@ public class SendFileEmail {
             Map<String,String> env=System.getenv();
             //TODO make sure able to be hosted on site
             // Get the default Session object.
-            Session session = Session.getInstance(properties,new javax.mail.Authenticator(){
-
+            Session session = Session.getInstance(properties, new Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
                     return new PasswordAuthentication(from,env.get("appKey"));
                 }
-
             });
 
             try {

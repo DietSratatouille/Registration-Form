@@ -6,7 +6,7 @@ class User extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            //id: -1,
+            //id: '' ,
             firstName: '',
             lastName: '',
             email: '',
@@ -19,7 +19,7 @@ class User extends Component {
             black: false,
             pacific: false,
             white: false,
-            isNonEthnic: false,
+            nonEthnic: false,
             veteran: '',
             degree: '',
             edu: '',
@@ -92,7 +92,7 @@ class User extends Component {
             black: this.state.black,
             pacific: this.state.pacific,
             white: this.state.white,
-            isNonEthnic: this.state.isNonEthnic,
+            nonEthnic: this.state.nonEthnic,
             veteran: this.state.veteran,
             degree: this.state.degree,
             edu: this.state.edu,
@@ -124,7 +124,7 @@ class User extends Component {
                     console.log({user:response.data})
                 }
             )
-        //console.log(user.edu)
+        console.log(user.file)
 
 
     }
@@ -137,6 +137,20 @@ class User extends Component {
                     <form onSubmit={this.createUser}>
                         {/*<div className="jumbotron table" style={{textAlign:"left"}}>*/}
                         <div className="form-group">
+                            {/*<label className="form-check-label">ID**/}
+                            {/*    <br/>*/}
+                            {/*    <input*/}
+                            {/*        className="form-control "*/}
+                            {/*        type="text"*/}
+                            {/*        value={this.state.id} disabled*/}
+                            {/*        name="id"*/}
+                            {/*        placeholder="Enter your answer"*/}
+
+                            {/*    />*/}
+                            {/*</label>*/}
+                            {/*<br />*/}
+                            {/*<br/>*/}
+
                         <label className="form-check-label">1. First Name*
                             <br/>
                             <input
@@ -291,8 +305,8 @@ class User extends Component {
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="americanIndian"
                                 checked={this.state.americanIndian}
                                 onChange={this.handleChange}
@@ -300,8 +314,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="asian"
                                 checked={this.state.asian}
                                 onChange={this.handleChange}
@@ -309,8 +323,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="black"
                                 checked={this.state.black}
                                 onChange={this.handleChange}
@@ -318,8 +332,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="pacific"
                                 checked={this.state.pacific}
                                 onChange={this.handleChange}
@@ -327,8 +341,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="white"
                                 checked={this.state.white}
                                 onChange={this.handleChange}
@@ -336,10 +350,10 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
-                                name="isNonEthnic"
-                                checked={this.state.isNonEthnic}
+                                style={{}}
+                                type="checkbox"
+                                name="nonEthnic"
+                                checked={this.state.nonEthnic}
                                 onChange={this.handleChange}
                             />Prefer not to say
                         </label>
@@ -450,8 +464,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="cPlusPlus"
                                 checked={this.state.cPlusPlus}
                                 onChange={this.handleChange}
@@ -459,8 +473,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="cSharp"
                                 checked={this.state.cSharp}
                                 onChange={this.handleChange}
@@ -468,8 +482,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="java"
                                 checked={this.state.java}
                                 onChange={this.handleChange}
@@ -477,8 +491,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="javascript"
                                 checked={this.state.javascript}
                                 onChange={this.handleChange}
@@ -486,8 +500,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="python"
                                 checked={this.state.python}
                                 onChange={this.handleChange}
@@ -495,8 +509,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="php"
                                 checked={this.state.php}
                                 onChange={this.handleChange}
@@ -504,8 +518,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="r"
                                 checked={this.state.r}
                                 onChange={this.handleChange}
@@ -522,8 +536,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="swift"
                                 checked={this.state.swift}
                                 onChange={this.handleChange}
@@ -531,8 +545,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="other"
                                 checked={this.state.other}
                                 onChange={this.handleChange}
@@ -540,8 +554,8 @@ style={{}}                                type="checkbox"
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="none"
                                 checked={this.state.none}
                                 onChange={this.handleChange}
