@@ -27,11 +27,11 @@ public class UserController {
         return userServices.userList();
     }
 
-    @GetMapping("findByID/{id}")
-    public Optional<User> findById(@PathVariable int id){
-
-        return userServices.findById(id);
-    }
+//    @GetMapping("findByID/{id}")
+//    public Optional<User> findById(@PathVariable int id){
+//
+//        return userServices.findById(id);
+//    }
 
 
     @PostMapping("/create")
@@ -44,15 +44,15 @@ public class UserController {
           return userServices.saveUser(user);
     }
 
-    @DeleteMapping("/deleteById/{id}")
-    public String deleteById(@PathVariable int id){
-        try {
-            userServices.deleteById(id);
-        } catch (RuntimeException runtimeException){
-            System.out.println("Could NOT ");
-        }
-
-        return "Success";
-    }
+//    @DeleteMapping("/deleteById/{id}")
+//    public String deleteById(@PathVariable int id){
+//        try {
+//            userServices.deleteById(id);
+//        } catch (RuntimeException runtimeException){
+//            System.out.println("Could NOT ");
+//        }
+//
+//        return "Success";
+//    }
 
 }
