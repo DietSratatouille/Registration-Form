@@ -32,7 +32,7 @@ public class UserServices {
 
     @Transactional
     public List<User> userList(){
-
+         
         return userRepository.findAll();
     }
 

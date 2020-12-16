@@ -5,7 +5,7 @@ class ListUsers extends Component{
     constructor(props){
         super(props)
         this.state = {
-            users:[]
+            users:[],
         }
         //bindings go here
         this.refreshUserList = this.refreshUserList.bind(this)
@@ -13,6 +13,7 @@ class ListUsers extends Component{
 
     componentDidMount() {
         this.refreshUserList();
+
     }
 
     refreshUserList(){
@@ -20,9 +21,12 @@ class ListUsers extends Component{
             .then(
                 response => {
                     this.setState({users:response.data})
-                    console.log({users:response.data})
+
+
+
                 }
             )
+        console.log(this.state.users)
     }
 
     render() {
@@ -75,6 +79,7 @@ class ListUsers extends Component{
 
                         <tbody>
                         {
+
                             this.state.users.map(
                                 users =>
                                     <tr style={{textAlign: "left"}} key={users.userID}>

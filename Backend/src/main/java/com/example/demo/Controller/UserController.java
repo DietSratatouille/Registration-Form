@@ -36,8 +36,8 @@ public class UserController {
 
     @PostMapping("/create")
     public String createUser(@RequestBody User user) throws InterruptedException {
-        PDFLoader pdf = new PDFLoader(user.getFirstName(),user.getLastName());
-        pdf.loadPDF();
+//        PDFLoader pdf = new PDFLoader(user.getFirstName(),user.getLastName());
+//        pdf.loadPDF();
         //SendFileEmail f = new SendFileEmail(user.getFirstName(),user.getLastName());
 
 
