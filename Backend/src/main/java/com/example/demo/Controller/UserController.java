@@ -44,7 +44,7 @@ public class UserController {
 
           return userServices.saveUser(user);
     }
-    @PostMapping("/fileUpload")
+    @PostMapping("/fileDownload")
     public String createPDF(@RequestBody File file) throws InterruptedException {
 //        PDFLoader pdf = new PDFLoader(user.getFirstName(),user.getLastName());
 //        pdf.loadPDF();
