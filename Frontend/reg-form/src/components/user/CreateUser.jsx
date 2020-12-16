@@ -56,6 +56,7 @@ class User extends Component {
 
     //component mount
 
+
     // handle change
     handleChange(event){
         const {name, value, type, checked} = event.target
@@ -89,7 +90,7 @@ class User extends Component {
             black: this.state.black,
             pacific: this.state.pacific,
             white: this.state.white,
-            nonEthnic: this.state.nonEthnic,
+            non_Ethnic: this.state.non_Ethnic,
             veteran: this.state.veteran,
             degree: this.state.degree,
             edu: this.state.edu,
@@ -350,7 +351,7 @@ class User extends Component {
                                 style={{}}
                                 type="checkbox"
                                 name="nonEthnic"
-                                checked={this.state.nonEthnic}
+                                checked={this.state.non_Ethnic}
                                 onChange={this.handleChange}
                             />Prefer not to say
                         </label>

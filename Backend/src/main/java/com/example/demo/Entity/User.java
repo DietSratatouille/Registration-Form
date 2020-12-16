@@ -52,7 +52,7 @@ public class User {
     private boolean white;
 
     @Column(name="non_Ethnic")
-    private boolean nonEthnic;
+    private boolean non_Ethnic;
 
     @Column(name = "veteran")
     private String veteran;
@@ -123,7 +123,7 @@ public class User {
     public User(String firstName, String lastName, String email,
                 String telephoneNum, String zipcode, String gender,
                 String hls, boolean americanIndian, boolean asian,
-                boolean black, boolean pacific, boolean white, boolean nonEthnic,
+                boolean black, boolean pacific, boolean white, boolean non_Ethnic,
                 String veteran, String degree, String edu,
                 String graduationDate, boolean cPlusPlus, boolean cSharp,
                 boolean java, boolean javascript, boolean python,
@@ -143,7 +143,7 @@ public class User {
         this.black = black;
         this.pacific = pacific;
         this.white = white;
-        this.nonEthnic = nonEthnic;
+        this.non_Ethnic = non_Ethnic;
         this.veteran = veteran;
         this.degree = degree;
         this.edu = edu;
@@ -275,12 +275,12 @@ public class User {
         this.white = white;
     }
 
-    public boolean nonEthnic() {
-        return nonEthnic;
+    public boolean isNon_Ethnic() {
+        return non_Ethnic;
     }
 
-    public void setNonEthnic(boolean nonEthnic) {
-        this.nonEthnic = nonEthnic;
+    public void setNonEthnic(boolean non_Ethnic) {
+        this.non_Ethnic = non_Ethnic;
     }
 
     public String getVeteran() {
@@ -469,7 +469,7 @@ public class User {
                 ", black=" + black +
                 ", pacific=" + pacific +
                 ", white=" + white +
-                ", nonEthnic=" + nonEthnic +
+                ", non_Ethnic=" + non_Ethnic +
                 ", veteran='" + veteran + '\'' +
                 ", degree='" + degree + '\'' +
                 ", edu='" + edu + '\'' +

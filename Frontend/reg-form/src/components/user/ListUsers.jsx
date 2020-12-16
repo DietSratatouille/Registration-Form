@@ -5,7 +5,7 @@ class ListUsers extends Component{
     constructor(props){
         super(props)
         this.state = {
-            users:[]
+            users:[],
         }
         //bindings go here
         this.refreshUserList = this.refreshUserList.bind(this)
@@ -13,6 +13,7 @@ class ListUsers extends Component{
 
     componentDidMount() {
         this.refreshUserList();
+
     }
 
     refreshUserList(){
@@ -20,9 +21,12 @@ class ListUsers extends Component{
             .then(
                 response => {
                     this.setState({users:response.data})
-                    console.log({users:response.data})
+                    console.log(this.state.users)
+
+
                 }
             )
+
     }
 
     render() {
@@ -75,44 +79,45 @@ class ListUsers extends Component{
 
                         <tbody>
                         {
+
                             this.state.users.map(
-                                users =>
-                                    <tr style={{textAlign: "left"}} key={users.userID}>
-                                        <td>{users.userID}</td>
-                                        <td>{users.firstName}</td>
-                                        <td>{users.lastName}</td>
-                                        <td>{users.email}</td>
-                                        <td>{users.telephoneNum}</td>
-                                        <td>{users.zipcode}</td>
-                                        <td>{users.gender}</td>
-                                        <td>{users.hls}</td>
-                                        <td>{users.americanIndian.toString()}</td>
-                                        <td>{users.asian.toString()}</td>
-                                        <td>{users.black.toString()}</td>
-                                        <td>{users.pacific.toString()}</td>
-                                        <td>{users.white.toString()}</td>
-                                        <td>{users.nonEthnic}</td>
-                                        <td>{users.veteran}</td>
-                                        <td>{users.degree}</td>
-                                        <td>{users.edu}</td>
-                                        <td>{users.graduationDate}</td>
-                                        <td>{users.cPlusPlus.toString()}</td>
-                                        <td>{users.cSharp.toString()}</td>
-                                        <td>{users.java.toString()}</td>
-                                        <td>{users.javascript.toString()}</td>
-                                        <td>{users.python.toString()}</td>
-                                        <td>{users.php.toString()}</td>
-                                        <td>{users.r.toString()}</td>
-                                        <td>{users.ruby.toString()}</td>
-                                        <td>{users.swift.toString()}</td>
-                                        <td>{users.other.toString()}</td>
-                                        <td>{users.none.toString()}</td>
-                                        <td>{users.relocate}</td>
-                                        <td>{users.workAuthorization}</td>
-                                        <td>{users.sponsorship}</td>
-                                        <td>{users.startDate}</td>
-                                        <td>{users.ad}</td>
-                                        <td>{users.referral}</td>
+                                user =>
+                                    <tr style={{textAlign: "left"}} key={user.userID}>
+                                        <td>{user.userID}</td>
+                                        <td>{user.firstName}</td>
+                                        <td>{user.lastName}</td>
+                                        <td>{user.email}</td>
+                                        <td>{user.telephoneNum}</td>
+                                        <td>{user.zipcode}</td>
+                                        <td>{user.gender}</td>
+                                        <td>{user.hls}</td>
+                                        <td>{user.americanIndian.toString()}</td>
+                                        <td>{user.asian.toString()}</td>
+                                        <td>{user.black.toString()}</td>
+                                        <td>{user.pacific.toString()}</td>
+                                        <td>{user.white.toString()}</td>
+                                       <td>{user.non_Ethnic.toString()}</td>
+                                        <td>{user.veteran}</td>
+                                        <td>{user.degree}</td>
+                                        <td>{user.edu}</td>
+                                        <td>{user.graduationDate}</td>
+                                        <td>{user.cPlusPlus.toString()}</td>
+                                        <td>{user.cSharp.toString()}</td>
+                                        <td>{user.java.toString()}</td>
+                                        <td>{user.javascript.toString()}</td>
+                                        <td>{user.python.toString()}</td>
+                                        <td>{user.php.toString()}</td>
+                                        <td>{user.r.toString()}</td>
+                                        <td>{user.ruby.toString()}</td>
+                                        <td>{user.swift.toString()}</td>
+                                        <td>{user.other.toString()}</td>
+                                        <td>{user.none.toString()}</td>
+                                        <td>{user.relocate}</td>
+                                        <td>{user.workAuthorization}</td>
+                                        <td>{user.sponsorship}</td>
+                                        <td>{user.startDate}</td>
+                                        <td>{user.ad}</td>
+                                        <td>{user.referral}</td>
                                         <td><button className="btn btn-link" style={{color:"yellow"}}>Update</button></td>
                                         <td><button className="btn btn-link" style={{color:"red"}}>Delete</button></td>
                                     </tr>

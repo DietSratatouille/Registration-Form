@@ -32,20 +32,21 @@ public class UserServices {
 
     @Transactional
     public List<User> userList(){
-
+        List<User> listed =userRepository.findAll();
+        System.out.println();
         return userRepository.findAll();
     }
 
-    @Transactional
-    public Optional<User> findById(int id){
-        return userRepository.findById(id);
-    }
-
-    @Transactional
-    public String deleteById(int id){
-        userRepository.deleteById(id);
-        return "Deleted user with id: " + id;
-    }
+//    @Transactional
+//    public Optional<User> findById(int id){
+//        return userRepository.findById(id);
+//    }
+//
+//    @Transactional
+//    public String deleteById(int id){
+//        userRepository.deleteById(id);
+//        return "Deleted user with id: " + id;
+//    }
 
 
 }
