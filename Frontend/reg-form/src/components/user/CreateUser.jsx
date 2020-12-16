@@ -2,10 +2,12 @@ import React,{Component} from 'react';
 import UserDataServices from "../../services-HTTP/UserDataServices";
 import  '../../bootstrap.css'
 
+
 class User extends Component {
     constructor(props) {
         super(props);
         this.state = {
+
             userID: '' ,
             firstName: '',
             lastName: '',
@@ -41,7 +43,7 @@ class User extends Component {
             startDate: '',
             ad: '',
             referral: '',
-            //file: ''
+
             file: null
 
 
@@ -52,6 +54,8 @@ class User extends Component {
         // handler bindings go below
         this.handleChange = this.handleChange.bind(this)
         this.createUser = this.createUser.bind(this)
+
+
     }
 
     //component mount
@@ -60,9 +64,19 @@ class User extends Component {
     // handle change
     handleChange(event){
         const {name, value, type, checked} = event.target
-        type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]: value })
+        if(type === "file"){
+            this.setState({file: event.target.files[0]})
+            console.log(this.state.file)
+        }
+        else
+        {
+            type === "checkbox" ? this.setState({[name]: checked}) : this.setState({[name]: value})
+        }
         console.log({[name]: value})
     }
+
+
+    // On file upload (click the upload button)
 
 
     // toggles a boolean to be either true or false
@@ -74,55 +88,60 @@ class User extends Component {
     // }
 
     // handle submit
-    createUser(){
-        let user = {
-            //states below
-            userID: this.state.userID,
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            email: this.state.email,
-            telephoneNum: this.state.telephoneNum,
-            zipcode: this.state.zipcode,
-            gender: this.state.gender,
-            hls: this.state.hls,
-            americanIndian: this.state.americanIndian,
-            asian: this.state.asian,
-            black: this.state.black,
-            pacific: this.state.pacific,
-            white: this.state.white,
-            non_Ethnic: this.state.non_Ethnic,
-            veteran: this.state.veteran,
-            degree: this.state.degree,
-            edu: this.state.edu,
-            graduationDate: this.state.graduationDate,
-            cPlusPlus: this.state.cPlusPlus,
-            cSharp: this.state.cSharp,
-            java: this.state.java,
-            javascript: this.state.javascript,
-            python: this.state.python,
-            php: this.state.php,
-            r: this.state.r,
-            ruby: this.state.ruby,
-            swift: this.state.swift,
-            other: this.state.other,
-            none: this.state.none,
-            relocate: this.state.relocate,
-            workAuthorization: this.state.workAuthorization,
-            sponsorship: this.state.sponsorship,
-            startDate: this.state.startDate,
-            ad: this.state.ad,
-            referral: this.state.referral,
-            file: this.state.file
-        }
-        // data service call goes here
-        UserDataServices.createUser(user)
-            .then(
-                response =>{
-                    //this.setState({user: response.data})
-                    console.log({user:response.data})
-                }
-            )
-        //console.log(user.file)
+    createUser()
+        {
+            let user = {
+                //states below
+                userID: this.state.userID,
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                email: this.state.email,
+                telephoneNum: this.state.telephoneNum,
+                zipcode: this.state.zipcode,
+                gender: this.state.gender,
+                hls: this.state.hls,
+                americanIndian: this.state.americanIndian,
+                asian: this.state.asian,
+                black: this.state.black,
+                pacific: this.state.pacific,
+                white: this.state.white,
+                non_Ethnic: this.state.non_Ethnic,
+                veteran: this.state.veteran,
+                degree: this.state.degree,
+                edu: this.state.edu,
+                graduationDate: this.state.graduationDate,
+                cPlusPlus: this.state.cPlusPlus,
+                cSharp: this.state.cSharp,
+                java: this.state.java,
+                javascript: this.state.javascript,
+                python: this.state.python,
+                php: this.state.php,
+                r: this.state.r,
+                ruby: this.state.ruby,
+                swift: this.state.swift,
+                other: this.state.other,
+                none: this.state.none,
+                relocate: this.state.relocate,
+                workAuthorization: this.state.workAuthorization,
+                sponsorship: this.state.sponsorship,
+                startDate: this.state.startDate,
+                ad: this.state.ad,
+                referral: this.state.referral,
+
+            }
+            // data service call goes here
+            const formData = new FormData();
+
+            // Update the formData object
+            formData.append(
+                "myFile",
+                this.state.file,
+                this.state.file.name
+            );
+            console.log(this.state.file.name)
+            UserDataServices.downloadPDF(formData).then(r => console.log("Sent"))
+            UserDataServices.createUser(user).then(r => console.log("Success") )
+
 
 
     }
@@ -130,7 +149,8 @@ class User extends Component {
     render() {
         return(
             <div>
-                <h1 style={{textAlign:"center", alignContent:"40%"}}>Pyramid Academy Registration</h1><br></br>
+                <h1 style={{textAlign:"center", alignContent:"40%"}}>Pyramid Academy Registration</h1>
+                <br/>
 
                     <form onSubmit={this.createUser}>
                         {/*<div className="jumbotron table" style={{textAlign:"left"}}>*/}
@@ -351,7 +371,7 @@ class User extends Component {
                                 style={{}}
                                 type="checkbox"
                                 name="nonEthnic"
-                                checked={this.state.non_Ethnic}
+                                checked={this.state.nonEthnic}
                                 onChange={this.handleChange}
                             />Prefer not to say
                         </label>
@@ -769,6 +789,7 @@ style={{}}                                type="checkbox"
                                     <label className="custom-file-label" htmlFor="file">Upload a file.. </label>
                                     <div className="invalid-feedback">Invalid file feedback</div>
                             </div>
+
                         </label>
                         <br/>
                         <br/>

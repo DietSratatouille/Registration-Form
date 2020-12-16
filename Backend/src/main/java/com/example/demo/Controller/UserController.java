@@ -49,7 +49,7 @@ public class UserController {
 //        PDFLoader pdf = new PDFLoader(user.getFirstName(),user.getLastName());
 //        pdf.loadPDF();
         //SendFileEmail f = new SendFileEmail(user.getFirstName(),user.getLastName());
-
+        System.out.println(file.getName());
 
           return "";
     }
@@ -58,6 +58,7 @@ public class UserController {
     public String deleteById(@PathVariable int id){
         try {
             userServices.deleteById(id);
+            System.out.println("Success");
         } catch (RuntimeException runtimeException){
             System.out.println("Could NOT ");
         }

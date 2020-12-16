@@ -1,0 +1,1 @@
+When checkbox is clicked and then clicked off it remains to be read as on
