@@ -6,6 +6,7 @@ import com.example.demo.Send.PDFLoader;
 import com.example.demo.Services.UserServices;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,11 +28,11 @@ public class UserController {
         return userServices.userList();
     }
 
-//    @GetMapping("findByID/{id}")
-//    public Optional<User> findById(@PathVariable int id){
-//
-//        return userServices.findById(id);
-//    }
+    @GetMapping("findByID/{id}")
+    public Optional<User> findById(@PathVariable int id){
+
+        return userServices.findById(id);
+    }
 
 
     @PostMapping("/create")
@@ -43,16 +44,25 @@ public class UserController {
 
           return userServices.saveUser(user);
     }
+    @PostMapping("/fileDownload")
+    public String createPDF(@RequestBody File file) throws InterruptedException {
+//        PDFLoader pdf = new PDFLoader(user.getFirstName(),user.getLastName());
+//        pdf.loadPDF();
+        //SendFileEmail f = new SendFileEmail(user.getFirstName(),user.getLastName());
 
-//    @DeleteMapping("/deleteById/{id}")
-//    public String deleteById(@PathVariable int id){
-//        try {
-//            userServices.deleteById(id);
-//        } catch (RuntimeException runtimeException){
-//            System.out.println("Could NOT ");
-//        }
-//
-//        return "Success";
-//    }
+
+          return "";
+    }
+
+    @DeleteMapping("/deleteById/{id}")
+    public String deleteById(@PathVariable int id){
+        try {
+            userServices.deleteById(id);
+        } catch (RuntimeException runtimeException){
+            System.out.println("Could NOT ");
+        }
+
+        return "Success";
+    }
 
 }

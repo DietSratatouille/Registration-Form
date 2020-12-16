@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 
 @Repository
-public interface UserRepository extends JpaRepository<User,Long> {
+public interface UserRepository extends JpaRepository<User,Integer> {
 }
