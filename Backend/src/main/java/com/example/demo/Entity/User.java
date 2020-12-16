@@ -143,7 +143,7 @@ public class User {
         this.black = black;
         this.pacific = pacific;
         this.white = white;
-        this.nonEthnic=nonEthnic;
+        this.nonEthnic = nonEthnic;
         this.veteran = veteran;
         this.degree = degree;
         this.edu = edu;
@@ -280,7 +280,7 @@ public class User {
     }
 
     public void setNonEthnic(boolean nonEthnic) {
-        nonEthnic = nonEthnic;
+        this.nonEthnic = nonEthnic;
     }
 
     public String getVeteran() {
