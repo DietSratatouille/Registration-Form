@@ -74,6 +74,7 @@ class ListUsers extends Component{
                                 <th>Start Date</th>
                                 <th>Ad</th>
                                 <th>Referral</th>
+                                <th>Resume File</th>
                             </tr>
                         </thead>
 
@@ -96,7 +97,7 @@ class ListUsers extends Component{
                                         <td>{user.black.toString()}</td>
                                         <td>{user.pacific.toString()}</td>
                                         <td>{user.white.toString()}</td>
-                                       <td>{user.non_Ethnic.toString()}</td>
+                                        <td>{user.non_Ethnic.toString()}</td>
                                         <td>{user.veteran}</td>
                                         <td>{user.degree}</td>
                                         <td>{user.edu}</td>
@@ -118,6 +119,7 @@ class ListUsers extends Component{
                                         <td>{user.startDate}</td>
                                         <td>{user.ad}</td>
                                         <td>{user.referral}</td>
+                                        <td>{user.file}</td>
                                         <td><button className="btn btn-link" style={{color:"yellow"}}>Update</button></td>
                                         <td><button className="btn btn-link" style={{color:"red"}}>Delete</button></td>
                                     </tr>

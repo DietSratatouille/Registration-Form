@@ -43,8 +43,8 @@ class User extends Component {
             startDate: '',
             ad: '',
             referral: '',
-
-            file: null
+            //file: ''
+            //file: null
 
 
             // store booleans to list for check box use?
@@ -148,13 +148,12 @@ class User extends Component {
 
     render() {
         return(
-            <div>
-                <h1 style={{textAlign:"center", alignContent:"40%"}}>Pyramid Academy Registration</h1>
-                <br/>
+            <div className="container " style={{textAlign:"left"}}>
+                <h1 style={{textAlign:"center", alignContent:"40%"}}>Pyramid Academy Registration</h1><br></br>
 
                     <form onSubmit={this.createUser}>
                         {/*<div className="jumbotron table" style={{textAlign:"left"}}>*/}
-                        <div className="form-group">
+                        <div className="form-group" style={{textAlign: ""}}>
                             {/*<label className="form-check-label">ID**/}
                             {/*    <br/>*/}
                             {/*    <input*/}
@@ -169,7 +168,7 @@ class User extends Component {
                             {/*<br />*/}
                             {/*<br/>*/}
 
-                        <label className="form-check-label">1. First Name*
+                        <label className="form-check-label" style={{textAlign:"left"}}>1. First Name*
                             <br/>
                             <input
                                 className="form-control "
@@ -238,10 +237,10 @@ class User extends Component {
                         </label>
                         <br />
                         <br/>
-                        
-                        <label className="form-check-label">6. What gender do you identify as? (if any)
+
+                        <label className="form-check-label" >6. What gender do you identify as? (if any)
                             <br/>
-                            <input
+                            <input style={{textAlign:"center"}}
                                 className="form-check-input "
                                 style={{}}
                                 type="radio"
