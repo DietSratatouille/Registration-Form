@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import CreateUser from "./components/user/CreateUser";
 import ListUsers from "./components/user/ListUsers";

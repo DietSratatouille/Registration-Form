@@ -10,6 +10,10 @@ class UserDataServices {
     createUser(user){
         return axios.post(`http://localhost:8080/create`, user)
     }
+
+    downloadPDF(file){
+        return axios.post(`http://localhost:8080/fileDownload`,file)
+    }
 }
 
 export default new UserDataServices()
