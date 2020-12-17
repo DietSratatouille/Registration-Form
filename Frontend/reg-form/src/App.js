@@ -24,8 +24,8 @@ function App() {
 
 
 
-      {/*<CreateUser/>*/}
-      <ListUsers/>
+      <CreateUser/>
+      {/*<ListUsers/>*/}
 
     </div>
   );
