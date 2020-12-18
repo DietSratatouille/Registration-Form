@@ -1,4 +1,7 @@
 import React, {Component} from 'react'
+import  '../../bootstrap.css'
+import UserDataServices from "../../services-HTTP/UserDataServices"
+import axios from "axios";
 
 class File extends Component{
     constructor(props) {
@@ -6,6 +9,10 @@ class File extends Component{
         this.state = {
             selectedFile: null
         }
+
+        //bindings go here
+        this.onFileChange = this.onFileChange.bind(this)
+        this.onFileUpload = this.onFileUpload.bind(this)
 
     }
 
@@ -23,6 +30,49 @@ class File extends Component{
         console.log(this.state.selectedFile);
 
         //axios POST for upload ?
+        axios.post("api/uploadFile", formData);
+
+    }
+
+    fileData = () => {
+        if (this.state.selectedFile) {
+
+            return (
+                <div>
+                    <h2>File Details:</h2>
+                    <p>File Name: {this.state.selectedFile.name}</p>
+                    <p>File Type: {this.state.selectedFile.type}</p>
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <br />
+                    <h4>Choose before Pressing the Upload button</h4>
+                </div>
+            );
+        }
+    }
+
+    render() {
+        return(
+            <div>
+                <h1>
+                    File Uploader
+                </h1>
+                <h3>
+                    File Upload Test!
+                </h3>
+                <div>
+                    <input type="file" onChange={this.onFileChange} />
+                    <button onClick={this.onFileUpload}>
+                        Upload!
+                    </button>
+                </div>
+                {this.fileData()}
+            </div>
+        )
     }
 
 }
+export default File;

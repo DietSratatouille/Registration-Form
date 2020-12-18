@@ -42,9 +42,7 @@ class User extends Component {
             sponsorship: '',
             startDate: '',
             ad: '',
-            referral: '',
-
-            file: null
+            referral: ''
 
 
             // store booleans to list for check box use?
@@ -126,22 +124,17 @@ class User extends Component {
                 sponsorship: this.state.sponsorship,
                 startDate: this.state.startDate,
                 ad: this.state.ad,
-                referral: this.state.referral,
+                referral: this.state.referral
 
             }
             // data service call goes here
-            const formData = new FormData();
-
-            // Update the formData object
-            formData.append(
-                "myFile",
-                this.state.file,
-                this.state.file.name
-            );
-            console.log(this.state.file.name)
-            UserDataServices.downloadPDF(formData).then(r => console.log("Sent"))
-            UserDataServices.createUser(user).then(r => console.log("Success") )
-
+            UserDataServices.createUser(user).then(r => console.log("Success"))
+                .then(
+                    response => {
+                        this.setState({user: response.data})
+                        console.log(this.state.user)
+                    }
+                )
 
 
     }
@@ -775,7 +768,7 @@ style={{}}                                type="checkbox"
                         <br/>
                         <br/>
 
-                        <label>20. Upload your updated resume.*
+                        <label>20. [WIP] Upload your updated resume.*
                             <br/>
                             <div className="custom-file">
                                 <input
@@ -789,12 +782,13 @@ style={{}}                                type="checkbox"
                                     <label className="custom-file-label" htmlFor="file">Upload a file.. </label>
                                     <div className="invalid-feedback">Invalid file feedback</div>
                             </div>
-
                         </label>
                         <br/>
                         <br/>
 
-                        <button className="btn btn-link text-input" style={{color:"blue"}} type="submit">Submit</button><br/><br/>
+                        <button className="btn btn-link text-input" style={{color:"blue"}} type="submit">Submit</button>
+                            <br/>
+                            <br/>
                         </div>
                         </form>
 
