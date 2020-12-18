@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import CreateUser from "./components/user/CreateUser";
 import ListUsers from "./components/user/ListUsers";
+import File from "./components/user/File";
 
 function App() {
   return (
@@ -23,8 +24,9 @@ function App() {
 
 
 
-      <CreateUser/>
+      {/*<CreateUser/>*/}
       {/*<ListUsers/>*/}
+      <File/>
 
     </div>
   );
