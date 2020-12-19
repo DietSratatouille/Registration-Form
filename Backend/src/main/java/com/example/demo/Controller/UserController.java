@@ -4,6 +4,7 @@ import com.example.demo.Entity.User;
 import com.example.demo.Repository.UserRepository;
 import com.example.demo.Send.PDFLoader;
 import com.example.demo.Services.UserServices;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
@@ -44,14 +45,16 @@ public class UserController {
 
           return userServices.saveUser(user);
     }
+    @RequestMapping(value = "file", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping("/fileDownload")
-    public String createPDF(@RequestBody File file) throws InterruptedException {
+    public void createPDF(@RequestBody File file) throws InterruptedException {
+        System.out.println(file.getName());
 //        PDFLoader pdf = new PDFLoader(user.getFirstName(),user.getLastName());
 //        pdf.loadPDF();
         //SendFileEmail f = new SendFileEmail(user.getFirstName(),user.getLastName());
-        System.out.println(file.getName());
 
-          return "";
+
+
     }
 
     @DeleteMapping("/deleteById/{id}")
