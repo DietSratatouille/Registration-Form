@@ -36,9 +36,9 @@ class ListUsers extends Component{
                 <br/>
 
                 <div className="jumbotron" style={{color:"white"}}>
-                    <table className="table table-bordered" style={{backgroundColor:"gray"}}>
+                    <table className="table table-bordered" style={{backgroundColor:"black"}}>
                         <thead>
-                            <tr style={{textAlign: "left" , color: "black"}}>
+                            <tr style={{textAlign: "left" , color: "white"}}>
                                 <th>ID</th>
                                 <th>First Name</th>
                                 <th>Surname</th>

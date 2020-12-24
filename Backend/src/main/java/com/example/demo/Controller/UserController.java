@@ -46,10 +46,11 @@ public class UserController {
     }
     @PostMapping("/fileDownload")
     public String createPDF(@RequestBody File file) throws InterruptedException {
-//        PDFLoader pdf = new PDFLoader(user.getFirstName(),user.getLastName());
-//        pdf.loadPDF();
+        //PDFLoader pdf = new PDFLoader(user.getFirstName(),user.getLastName());
+        PDFLoader pdf = new PDFLoader(file);
+        pdf.loadPDF();
         //SendFileEmail f = new SendFileEmail(user.getFirstName(),user.getLastName());
-        System.out.println(file.getName());
+        //System.out.println(file.getName());
 
           return "";
     }

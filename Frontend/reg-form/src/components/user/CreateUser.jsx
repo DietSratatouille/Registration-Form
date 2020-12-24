@@ -147,7 +147,8 @@ class User extends Component {
 
                     <form onSubmit={this.createUser}>
                         {/*<div className="jumbotron table" style={{textAlign:"left"}}>*/}
-                        <div className="form-group" style={{textAlign: ""}}>
+                        <div className="container">
+                        <div className="form-group" style={{backgroundColor:"black", color:'white', textAlign:'left', paddingLeft:'25px', padding:'30px'}}>
                             {/*<label className="form-check-label">ID**/}
                             {/*    <br/>*/}
                             {/*    <input*/}
@@ -162,7 +163,7 @@ class User extends Component {
                             {/*<br />*/}
                             {/*<br/>*/}
 
-                        <label className="form-check-label" style={{textAlign:"left"}}>1. First Name*
+                        <label className="form-check-label">1. First Name*
                             <br/>
                             <input
                                 className="form-control "
@@ -240,7 +241,7 @@ class User extends Component {
                                 type="radio"
                                 name="gender"
                                 value="woman"
-                                checked={this.state.gender === "woman"}
+                                checked={this.state.gender === "Woman"}
                                 onChange={this.handleChange}
                             /> Woman
                             <br/>
@@ -256,7 +257,7 @@ class User extends Component {
                             <br/>
                             <input
                                 className="form-check-input "
-                                style={{}}
+                                style={{paddingLeft:'25px'}}
                                 type="radio"
                                 name="gender"
                                 value="Non-binary"
@@ -789,6 +790,7 @@ style={{}}                                type="checkbox"
                         <button className="btn btn-link text-input" style={{color:"blue"}} type="submit">Submit</button>
                             <br/>
                             <br/>
+                        </div>
                         </div>
                         </form>
 
