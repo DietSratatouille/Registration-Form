@@ -1,13 +1,13 @@
 import React,{Component} from 'react';
 import UserDataServices from "../../services-HTTP/UserDataServices";
 import  '../../bootstrap.css'
+import Select from "react-dropdown-select";
 
 
 class User extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
             userID: '' ,
             firstName: '',
             lastName: '',
@@ -25,6 +25,7 @@ class User extends Component {
             veteran: '',
             degree: '',
             edu: '',
+            major:'',
             graduationDate: '',
             cPlusPlus: false,
             cSharp: false,
@@ -42,22 +43,45 @@ class User extends Component {
             sponsorship: '',
             startDate: '',
             ad: '',
-            referral: ''
+            referral: '',
+            schools:[],
+            majors:[]
 
 
-            // store booleans to list for check box use?
-            //isEthnic: [],
-            //knownLanguages: []
         }
+
+
         // handler bindings go below
         this.handleChange = this.handleChange.bind(this)
         this.createUser = this.createUser.bind(this)
-
+        this.handleChangeSchools = this.handleChangeSchools.bind(this)
+        this.handleChangeMajors = this.handleChangeMajors.bind(this)
 
     }
 
     //component mount
 
+componentDidMount() {
+    UserDataServices.listOfSchools().then(response => {
+
+        for (const [index, value] of response.data.entries()) {
+        this.state.schools.push({ value:value,label:value})
+
+        }
+
+
+    })
+    UserDataServices.listOfMajors().then(response => {
+
+    for (const [index, value] of response.data.entries()) {
+    this.state.majors.push({value:value,label:value})
+
+    }
+
+
+})
+
+}
 
     // handle change
     handleChange(event){
@@ -71,6 +95,25 @@ class User extends Component {
             type === "checkbox" ? this.setState({[name]: checked}) : this.setState({[name]: value})
         }
         console.log({[name]: value})
+    }
+    handleChangeSchools=option=>{
+        option.valueOf().map(result=>{
+            this.setState({edu: result.value},function (){console.log(this.state.edu)})
+        })
+
+
+
+
+    }
+    handleChangeMajors=option=>{
+        option.valueOf().map(result=>{
+            this.setState({major: result.value},function (){console.log(this.state.edu)})
+
+        })
+
+
+
+
     }
 
 
@@ -86,6 +129,7 @@ class User extends Component {
     // }
 
     // handle submit
+
     createUser()
         {
             let user = {
@@ -107,6 +151,7 @@ class User extends Component {
                 veteran: this.state.veteran,
                 degree: this.state.degree,
                 edu: this.state.edu,
+                major:this.state.major,
                 graduationDate: this.state.graduationDate,
                 cPlusPlus: this.state.cPlusPlus,
                 cSharp: this.state.cSharp,
@@ -140,6 +185,8 @@ class User extends Component {
     }
 
     render() {
+
+        //console.log(this.state.schoolOptions)
         return(
             <div>
                 <h1 style={{textAlign:"center", alignContent:"40%"}}>Pyramid Academy Registration</h1>
@@ -240,7 +287,7 @@ class User extends Component {
                                 style={{}}
                                 type="radio"
                                 name="gender"
-                                value="woman"
+                                value="Woman"
                                 checked={this.state.gender === "Woman"}
                                 onChange={this.handleChange}
                             /> Woman
@@ -404,7 +451,7 @@ class User extends Component {
                                 style={{}}
                                 type="radio"
                                 name="degree"
-                                value="Associate's"
+                                value="Associates"
                                 checked={this.state.degree === "Associates"}
                                 onChange={this.handleChange}
                             />Associate's
@@ -444,15 +491,46 @@ class User extends Component {
 
                         <label className="form-check-label">11. School/University name*
                             <br/>
-                            <input
-                                className="form-control "
+
+                            <Select
+                                options={this.state.schools}
+                                name="edu"
                                 type="text"
                                 value={this.state.edu}
-                                name="edu"
-                                placeholder="Enter your answer here"
-                                onChange={this.handleChange}
+                                searchable={true}
+                                dropdownHandle={true}
+                                input={{color:"white"}}
+                                style={{color:"black",backgroundColor:"white"}}
+                                closeOnSelect="true"
+                                onChange={this.handleChangeSchools}
+                                emptyMessage="School Not Found"
+                                placeholder="Select your School"
 
                             />
+
+                        </label>
+
+                        <br/>
+                        <br/>
+
+                        <label className="form-check-label">11. Major*
+                            <br/>
+
+                            <Select
+                                options={this.state.majors}
+
+                                value={this.state.major}
+                                searchable={true}
+                                dropdownHandle={true}
+                                input={{color:"white"}}
+                                style={{color:"black",backgroundColor:"white"}}
+                                closeOnSelect={true}
+                                onChange={this.handleChangeMajors}
+                                emptyMessage="Major Not Found"
+                                placeholder="Select your Major"
+
+                            />
+
                         </label>
 
                         <br/>
@@ -539,8 +617,8 @@ class User extends Component {
                             <br/>
                             <input
                                 className="form-check-input"
-
-style={{}}                                type="checkbox"
+                                style={{}}
+                                type="checkbox"
                                 name="ruby"
                                 checked={this.state.ruby}
                                 onChange={this.handleChange}

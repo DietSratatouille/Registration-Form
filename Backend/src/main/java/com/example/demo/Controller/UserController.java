@@ -8,8 +8,12 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Scanner;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -35,6 +39,30 @@ public class UserController {
         return userServices.findById(id);
     }
 
+    @GetMapping("/school")
+    public List<String> getSchools() throws FileNotFoundException {
+        File schools = new File(System.getProperty("user.dir")+"\\src\\main\\resources\\Schools.txt");
+        Scanner scan = new Scanner(schools);
+        List<String> school = new ArrayList<String>();
+        while (scan.hasNextLine())
+        {
+
+            school.add(scan.nextLine());
+        }
+        return school;
+    }
+    @GetMapping("/major")
+    public List<String> getMajor() throws FileNotFoundException {
+        File majors = new File(System.getProperty("user.dir")+"\\src\\main\\resources\\Major.txt");
+        Scanner scan = new Scanner(majors);
+        List<String> major = new ArrayList<String>();
+        while (scan.hasNextLine())
+        {
+
+            major.add(scan.nextLine());
+        }
+        return major;
+    }
 
     @PostMapping("/create")
     public String createUser(@RequestBody User user) throws InterruptedException {

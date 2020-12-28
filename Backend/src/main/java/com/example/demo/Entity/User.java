@@ -63,6 +63,9 @@ public class User {
     @Column(name = "edu")
     private String edu;
 
+    @Column(name = "major")
+    private String major;
+
     @Column(name = "grad_Date")
     private String graduationDate;
 
@@ -124,7 +127,7 @@ public class User {
                 String telephoneNum, String zipcode, String gender,
                 String hls, boolean americanIndian, boolean asian,
                 boolean black, boolean pacific, boolean white, boolean non_Ethnic,
-                String veteran, String degree, String edu,
+                String veteran, String degree, String edu,String major,
                 String graduationDate, boolean cPlusPlus, boolean cSharp,
                 boolean java, boolean javascript, boolean python,
                 boolean php, boolean r, boolean ruby, boolean swift,
@@ -147,6 +150,7 @@ public class User {
         this.veteran = veteran;
         this.degree = degree;
         this.edu = edu;
+        this.major=major;
         this.graduationDate = graduationDate;
         this.cPlusPlus = cPlusPlus;
         this.cSharp = cSharp;
@@ -307,6 +311,14 @@ public class User {
         this.edu = edu;
     }
 
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
     public String getGraduationDate() {
         return graduationDate;
     }
@@ -453,6 +465,7 @@ public class User {
 
 
 
+
     @Override
     public String toString() {
         return "User{" +
@@ -473,6 +486,7 @@ public class User {
                 ", veteran='" + veteran + '\'' +
                 ", degree='" + degree + '\'' +
                 ", edu='" + edu + '\'' +
+                ", major='" + major + '\'' +
                 ", graduationDate='" + graduationDate + '\'' +
                 ", cPlusPlus=" + cPlusPlus +
                 ", cSharp=" + cSharp +
