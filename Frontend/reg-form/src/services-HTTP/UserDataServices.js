@@ -6,6 +6,14 @@ class UserDataServices {
         return axios.get(`http://localhost:8080/listUsers`)
     }
 
+    listOfSchools(){
+        return axios.get(`http://localhost:8080/school`)
+    }
+
+    listOfMajors(){
+        return axios.get(`http://localhost:8080/major`)
+    }
+
     //POST Request(s)
     createUser(user){
         return axios.post(`http://localhost:8080/create`, user)

@@ -30,6 +30,7 @@ CREATE TABLE User (
                 veteran VARCHAR(4) NOT NULL,
                 degree VARCHAR(25) NOT NULL,
                 edu VARCHAR(60) NOT NULL,
+                major VARCHAR(60) NOT NULL,
                 grad_Date VARCHAR(11) NOT NULL,
                 c_Plus_Plus boolean NOT NULL,
                 c_Sharp boolean NOT NULL,

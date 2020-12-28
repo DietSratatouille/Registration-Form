@@ -25,9 +25,9 @@ function App() {
 
 
 
-      {/*<CreateUser/>*/}
+      <CreateUser/>
       {/*<ListUsers/>*/}
-      <FileUpload/>
+      {/*<FileUpload/>*/}
 
     </div>
   );

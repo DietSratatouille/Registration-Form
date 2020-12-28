@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import  '../../bootstrap.css'
 import UserDataServices from "../../services-HTTP/UserDataServices"
 import axios from "axios";
+import User from "./CreateUser";
 
 class File extends Component{
     constructor(props) {
@@ -11,8 +12,8 @@ class File extends Component{
         }
 
         //bindings go here
-        this.onFileChange = this.onFileChange.bind(this)
-        this.onFileUpload = this.onFileUpload.bind(this)
+        // this.onFileChange = this.onFileChange.bind(this)
+        // this.onFileUpload = this.onFileUpload.bind(this)
 
     }
 
@@ -30,7 +31,9 @@ class File extends Component{
         console.log(this.state.selectedFile);
 
         //axios POST for upload ?
-        axios.post("api/uploadFile", formData);
+        //UserDataServices.downloadPDF(`http://localhost:8080/fileDownload`,formData)
+        axios.post(`http://localhost:8080/fileDownload`, formData).then()
+
 
     }
 
