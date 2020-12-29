@@ -17,7 +17,7 @@ ___________________________________
 
 [C]       [Sterling] Make sure all fields are required other than gender, ethnicity, and race
 
-[TBD]       [Ed] Look into options for data capture & sharing
+[TBD]     [Ed] Look into options for data capture & sharing
 
 [TBD]   Ensure that submission date is included in the data that I access
 
