@@ -2,8 +2,6 @@ import React from 'react';
 import './App.css';
 import CreateUser from "./components/user/CreateUser";
 import ListUsers from "./components/user/ListUsers";
-import File from "./components/user/File";
-import FileUpload from "./components/user/FileUpload";
 
 function App() {
   return (
@@ -27,8 +25,6 @@ function App() {
 
       <CreateUser/>
       {/*<ListUsers/>*/}
-      {/*<FileUpload/>*/}
-
     </div>
   );
 }

@@ -1,8 +1,7 @@
-import React,{Component} from 'react';
+import React,{Component, useState} from 'react';
 import UserDataServices from "../../services-HTTP/UserDataServices";
 import  '../../bootstrap.css'
 import Select from "react-dropdown-select";
-
 
 class User extends Component {
     constructor(props) {
@@ -101,9 +100,6 @@ componentDidMount() {
             this.setState({edu: result.value},function (){console.log(this.state.edu)})
         })
 
-
-
-
     }
     handleChangeMajors=option=>{
         option.valueOf().map(result=>{
@@ -111,13 +107,10 @@ componentDidMount() {
 
         })
 
-
-
-
     }
 
 
-    // On file upload (click the upload button)
+    
 
 
     // toggles a boolean to be either true or false
@@ -502,7 +495,31 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">11. School/University name*
+
+                        <label className="form-check-label">11. Major*
+                            <br/>
+
+                            <Select
+                                options={this.state.majors}
+                                name="major"
+                                value={this.state.major}
+                                searchable={true}
+                                dropdownHandle={true}
+                                input={{color:"white"}}
+                                style={{color:"black",backgroundColor:"white"}}
+                                closeOnSelect={true}
+                                onChange={this.handleChangeMajors}
+                                emptyMessage="Major Not Found"
+                                placeholder="Select your Major"
+                                required={true}
+                            />
+
+                        </label>
+
+                        <br/>
+                        <br/>
+
+                        <label className="form-check-label">12. School/University name*
                             <br/>
 
                             <Select
@@ -518,45 +535,23 @@ componentDidMount() {
                                 onChange={this.handleChangeSchools}
                                 emptyMessage="School Not Found"
                                 placeholder="Select your School"
-
+                                required={true}
                             />
+
 
                         </label>
 
-                        <br/>
-                        <br/>
-
-                        <label className="form-check-label">11. Major*
+                            <br/>
                             <br/>
 
-                            <Select
-                                options={this.state.majors}
-
-                                value={this.state.major}
-                                searchable={true}
-                                dropdownHandle={true}
-                                input={{color:"white"}}
-                                style={{color:"black",backgroundColor:"white"}}
-                                closeOnSelect={true}
-                                onChange={this.handleChangeMajors}
-                                emptyMessage="Major Not Found"
-                                placeholder="Select your Major"
-
-                            />
-
-                        </label>
-
-                        <br/>
-                        <br/>
-
-                        <label className="form-check-label">12. Graduation Date/Expected Graduation Date*
+                        <label className="form-check-label">13. Graduation Date/Expected Graduation Date*
                             <br/>
                             <input
-                                className="form-control "
-                                type="text"
-                                value={this.state.graduationDate}
+                                className="form-control datepicker"
+                                type="date"
+                                value={this.state.graduationDate.toString()}
                                 name="graduationDate"
-                                placeholder="Enter date as m/d/yyyy"
+                                //placeholder="Enter date as m/d/yyyy"
                                 onChange={this.handleChange}
                                 required={true}
                             />
@@ -564,7 +559,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">13. What programming languages do you have experience with, if any?*
+                        <label className="form-check-label">14. What programming languages do you have experience with, if any?*
                             <br/>
                             <input
                                 className="Check-Input"
@@ -669,7 +664,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">14. Are you willing to relocate anywhere within the US for customer based engagements?*
+                        <label className="form-check-label">15. Are you willing to relocate anywhere within the US for customer based engagements?*
                             <br/>
                             <input
                                 className="Radio-Input"
@@ -707,7 +702,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">15. Are you authorized to work lawfully in the United States for Pyramid Academy?*
+                        <label className="form-check-label">16. Are you authorized to work lawfully in the United States for Pyramid Academy?*
                             <br/>
                             <input
                                 className="Radio-Input"
@@ -734,7 +729,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">16. Will you now or in the future require Pyramid Academy to commence (“sponsor”)
+                        <label className="form-check-label">17. Will you now or in the future require Pyramid Academy to commence (“sponsor”)
                             an immigration case in order to employ you (for example, H-1B or other employment-based immigration case)?
                             This is sometimes called “sponsorship” for an employment-based visa status.*
                             <br/>
@@ -763,14 +758,14 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">17. What is the earliest date you are available or interested in joining Pyramid Academy?*
+                        <label className="form-check-label">18. What is the earliest date you are available or interested in joining Pyramid Academy?*
                             <br/>
                             <input
                                 className="form-control "
-                                type="text"
-                                value={this.state.startDate}
+                                type="date"
+                                value={this.state.startDate.toString()}
                                 name="startDate"
-                                placeholder="Enter date as m/d/yyyy"
+                                //placeholder="Enter date as m/d/yyyy"
                                 onChange={this.handleChange}
                                 required={true}
                             />
@@ -778,7 +773,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">18. How did you hear about us?*
+                        <label className="form-check-label">19. How did you hear about us?*
                             <br/>
                             <input
                                 className="Radio-Input"
@@ -862,7 +857,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label>19. If someone referred you, what is their name?
+                        <label>20. If someone referred you, what is their name?
                             <br/>
                             <input
                                 className="form-control "
@@ -876,7 +871,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label>20. [WIP] Upload your updated resume.*
+                        <label>21. [WIP] Upload your updated resume.*
                             <br/>
                             <div className="custom-file">
                                 <input
