@@ -11,13 +11,13 @@ ___________________________________
 
 [C]   Sponsorship question on current form
 
-[WIP]   Major – add this after highest degree completed (don’t know if I mentioned that)
+[C]   Major – add this after highest degree completed (don’t know if I mentioned that)
 
-[WIP]       [Sterling] Add drop-down lists to major & school only from these lists here
+[C]       [Sterling] Add drop-down lists to major & school only from these lists here
 
-[WIP]       [Sterling] Make sure all fields are required other than gender, ethnicity, and race
+[C]       [Sterling] Make sure all fields are required other than gender, ethnicity, and race
 
-[WIP]       [Ed] Look into options for data capture & sharing
+[TBD]       [Ed] Look into options for data capture & sharing
 
 [TBD]   Ensure that submission date is included in the data that I access
 

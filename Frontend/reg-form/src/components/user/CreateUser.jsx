@@ -219,6 +219,7 @@ componentDidMount() {
                                 name="firstName"
                                 placeholder="Enter your answer"
                                 onChange={this.handleChange}
+                                required={true}
                             />
                         </label>
                         <br />
@@ -233,6 +234,7 @@ componentDidMount() {
                                 name="lastName"
                                 placeholder="Enter your answer"
                                 onChange={this.handleChange}
+                                required={true}
                             />
                         </label>
                         <br/>
@@ -247,6 +249,7 @@ componentDidMount() {
                                 name="email"
                                 placeholder="Enter your answer here"
                                 onChange={this.handleChange}
+                                required={true}
                             />
                         </label>
                         <br />
@@ -261,6 +264,7 @@ componentDidMount() {
                                 name="telephoneNum"
                                 placeholder="Enter your answer here"
                                 onChange={this.handleChange}
+                                required={true}
                             />
                         </label>
                         <br/>
@@ -275,16 +279,18 @@ componentDidMount() {
                                 name="zipcode"
                                 placeholder="Enter your answer here"
                                 onChange={this.handleChange}
+                                required={true}
                             />
                         </label>
                         <br />
                         <br/>
 
-                        <label className="form-check-label" >6. What gender do you identify as? (if any)
+                        <label className="form-check-label">6. What gender do you identify as? (if any)
                             <br/>
-                            <input style={{textAlign:"center"}}
-                                className="form-check-input "
-                                style={{}}
+                            <input
+                                // className="
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="gender"
                                 value="Woman"
@@ -293,8 +299,9 @@ componentDidMount() {
                             /> Woman
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                //className="
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="gender"
                                 value="Man"
@@ -303,8 +310,8 @@ componentDidMount() {
                             /> Man
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{paddingLeft:'25px'}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="gender"
                                 value="Non-binary"
@@ -313,8 +320,8 @@ componentDidMount() {
                             /> Non-Binary
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="gender"
                                 value="Prefer not to say"
@@ -328,8 +335,8 @@ componentDidMount() {
                         <label className="form-check-label">7. Are you of Hispanic, Latino, or Spanish origin?
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="hls"
                                 value="Yes"
@@ -338,8 +345,8 @@ componentDidMount() {
                             /> Yes
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="hls"
                                 value="No"
@@ -348,8 +355,8 @@ componentDidMount() {
                             /> No
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="hls"
                                 value="Prefer not to say"
@@ -363,8 +370,8 @@ componentDidMount() {
                         <label className="form-check-label">8. How would you describe yourself?
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="americanIndian"
                                 checked={this.state.americanIndian}
@@ -372,8 +379,8 @@ componentDidMount() {
                             />American Indian
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="asian"
                                 checked={this.state.asian}
@@ -381,8 +388,8 @@ componentDidMount() {
                             />Asian
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="black"
                                 checked={this.state.black}
@@ -390,8 +397,8 @@ componentDidMount() {
                             />Black
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="pacific"
                                 checked={this.state.pacific}
@@ -399,8 +406,8 @@ componentDidMount() {
                             />Native Hawaiian or other Pacific Islander
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="white"
                                 checked={this.state.white}
@@ -408,8 +415,8 @@ componentDidMount() {
                             />White
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="nonEthnic"
                                 checked={this.state.nonEthnic}
@@ -422,23 +429,25 @@ componentDidMount() {
                         <label className="form-check-label">9. Are you a veteran?*
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="veteran"
                                 value="Yes"
                                 checked={this.state.veteran === "Yes"}
                                 onChange={this.handleChange}
+                                required={true}
                             />Yes
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="veteran"
                                 value="No"
                                 checked={this.state.veteran === "No"}
                                 onChange={this.handleChange}
+                                required={true}
                             />No
                         </label>
                         <br/>
@@ -447,43 +456,47 @@ componentDidMount() {
                         <label className="form-check-label">10. Highest completed degree of education*
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="degree"
                                 value="Associates"
                                 checked={this.state.degree === "Associates"}
                                 onChange={this.handleChange}
+                                required={true}
                             />Associate's
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="degree"
                                 value="Bachelors"
                                 checked={this.state.degree === "Bachelors"}
                                 onChange={this.handleChange}
+                                required={true}
                             />Bachelor's
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="degree"
                                 value="Masters"
                                 checked={this.state.degree === "Masters"}
                                 onChange={this.handleChange}
+                                required={true}
                             />Master's
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="degree"
                                 value="Post-Graduate"
                                 checked={this.state.degree === "Post-Graduate"}
                                 onChange={this.handleChange}
+                                required={true}
                             />Post-Graduate
                         </label>
                         <br/>
@@ -545,6 +558,7 @@ componentDidMount() {
                                 name="graduationDate"
                                 placeholder="Enter date as m/d/yyyy"
                                 onChange={this.handleChange}
+                                required={true}
                             />
                         </label>
                         <br/>
@@ -553,8 +567,8 @@ componentDidMount() {
                         <label className="form-check-label">13. What programming languages do you have experience with, if any?*
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="cPlusPlus"
                                 checked={this.state.cPlusPlus}
@@ -562,8 +576,8 @@ componentDidMount() {
                             />C++
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="cSharp"
                                 checked={this.state.cSharp}
@@ -571,8 +585,8 @@ componentDidMount() {
                             />C#
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="java"
                                 checked={this.state.java}
@@ -580,8 +594,8 @@ componentDidMount() {
                             />Java
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="javascript"
                                 checked={this.state.javascript}
@@ -589,8 +603,8 @@ componentDidMount() {
                             />JavaScript
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="python"
                                 checked={this.state.python}
@@ -598,8 +612,8 @@ componentDidMount() {
                             />Python
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="php"
                                 checked={this.state.php}
@@ -607,8 +621,8 @@ componentDidMount() {
                             />PHP
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="r"
                                 checked={this.state.r}
@@ -616,8 +630,8 @@ componentDidMount() {
                             />R
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="ruby"
                                 checked={this.state.ruby}
@@ -625,8 +639,8 @@ componentDidMount() {
                             />Ruby
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="swift"
                                 checked={this.state.swift}
@@ -634,8 +648,8 @@ componentDidMount() {
                             />Swift
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="other"
                                 checked={this.state.other}
@@ -643,8 +657,8 @@ componentDidMount() {
                             />Other
                             <br/>
                             <input
-                                className="form-check-input"
-                                style={{}}
+                                className="Check-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="checkbox"
                                 name="none"
                                 checked={this.state.none}
@@ -658,33 +672,36 @@ componentDidMount() {
                         <label className="form-check-label">14. Are you willing to relocate anywhere within the US for customer based engagements?*
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="relocate"
                                 value="Yes"
                                 checked={this.state.relocate === "Yes"}
                                 onChange={this.handleChange}
+                                required={true}
                             /> Yes
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="relocate"
                                 value="No"
                                 checked={this.state.relocate === "No"}
                                 onChange={this.handleChange}
+                                required={true}
                             /> No
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="relocate"
                                 value="Maybe"
                                 checked={this.state.relocate === "Maybe"}
                                 onChange={this.handleChange}
+                                required={true}
                             /> Maybe/unsure
                         </label>
                         <br/>
@@ -693,23 +710,25 @@ componentDidMount() {
                         <label className="form-check-label">15. Are you authorized to work lawfully in the United States for Pyramid Academy?*
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="workAuthorization"
                                 value="Yes"
                                 checked={this.state.workAuthorization === "Yes"}
                                 onChange={this.handleChange}
+                                required={true}
                             /> Yes
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="workAuthorization"
                                 value="No"
                                 checked={this.state.workAuthorization === "No"}
                                 onChange={this.handleChange}
+                                required={true}
                             /> No
                         </label>
                         <br/>
@@ -720,23 +739,25 @@ componentDidMount() {
                             This is sometimes called “sponsorship” for an employment-based visa status.*
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="sponsorship"
                                 value="Yes"
                                 checked={this.state.sponsorship === "Yes"}
                                 onChange={this.handleChange}
+                                required={true}
                             />Yes
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="sponsorship"
                                 value="No"
                                 checked={this.state.sponsorship === "No"}
                                 onChange={this.handleChange}
+                                required={true}
                             />No
                         </label>
                         <br/>
@@ -751,6 +772,7 @@ componentDidMount() {
                                 name="startDate"
                                 placeholder="Enter date as m/d/yyyy"
                                 onChange={this.handleChange}
+                                required={true}
                             />
                         </label>
                         <br/>
@@ -759,68 +781,74 @@ componentDidMount() {
                         <label className="form-check-label">18. How did you hear about us?*
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="ad"
                                 value="University hosted event"
                                 checked={this.state.ad === "University hosted event"}
                                 onChange={this.handleChange}
+                                required={true}
                             />University hosted event (virtual or in-person)
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="ad"
                                 value="Handshake"
                                 checked={this.state.ad === "Handshake"}
                                 onChange={this.handleChange}
+                                required={true}
                             />Handshake
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="ad"
                                 value="Pyramid hosted info session"
                                 checked={this.state.ad === "Pyramid hosted info session"}
                                 onChange={this.handleChange}
+                                required={true}
                             />Pyramid Academy hosted info session
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="ad"
                                 value="Referral"
                                 checked={this.state.ad === "Referral"}
                                 onChange={this.handleChange}
+                                required={true}
                             />Referral (personal referral)
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="ad"
                                 value="Search engine"
                                 checked={this.state.ad === "Search engine"}
                                 onChange={this.handleChange}
+                                required={true}
                             />Search Engine (Google, AskJeeves, DuckDuckGo etc.)
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 name="ad"
                                 value="Social media"
                                 checked={this.state.ad === "Social media"}
                                 onChange={this.handleChange}
+                                required={true}
                             />Social Media (Facebook, LinkedIn, Twitter, etc.))
                             <br/>
                             <input
-                                className="form-check-input "
-                                style={{}}
+                                className="Radio-Input"
+                                style={{verticalAlign:"baseline", padding:"10px", margin:"10px" }}
                                 type="radio"
                                 value="Other"
                                 checked={this.state.ad === "Other"}
@@ -828,6 +856,7 @@ componentDidMount() {
                                 name="ad"
                                 //placeholder="Other"
                                 onChange={this.handleChange}
+                                required={true}
                             />Other
                         </label>
                         <br/>
