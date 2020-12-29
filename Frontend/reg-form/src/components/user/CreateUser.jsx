@@ -110,7 +110,7 @@ componentDidMount() {
     }
 
 
-    
+
 
 
     // toggles a boolean to be either true or false
@@ -549,9 +549,10 @@ componentDidMount() {
                             <input
                                 className="form-control datepicker"
                                 type="date"
+
                                 value={this.state.graduationDate.toString()}
                                 name="graduationDate"
-                                //placeholder="Enter date as m/d/yyyy"
+                                //placeholder="m/d/yyyy"
                                 onChange={this.handleChange}
                                 required={true}
                             />
@@ -765,7 +766,7 @@ componentDidMount() {
                                 type="date"
                                 value={this.state.startDate.toString()}
                                 name="startDate"
-                                //placeholder="Enter date as m/d/yyyy"
+                                //placeholder="m/d/yyyy"
                                 onChange={this.handleChange}
                                 required={true}
                             />
