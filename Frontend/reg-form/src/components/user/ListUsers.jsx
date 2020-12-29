@@ -55,6 +55,7 @@ class ListUsers extends Component{
                                 <th>Non-Ethnic</th>
                                 <th>Veteran</th>
                                 <th>Degree</th>
+                                <th>Major</th>
                                 <th>University</th>
                                 <th>Graduation Date</th>
                                 <th>C++</th>
@@ -100,6 +101,7 @@ class ListUsers extends Component{
                                         <td>{user.non_Ethnic.toString()}</td>
                                         <td>{user.veteran}</td>
                                         <td>{user.degree}</td>
+                                        <td>{user.major}</td>
                                         <td>{user.edu}</td>
                                         <td>{user.graduationDate}</td>
                                         <td>{user.cPlusPlus.toString()}</td>
