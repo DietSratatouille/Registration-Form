@@ -23,9 +23,9 @@ ___________________________________
 
 
 --------------------------------------------
-[WIP] State -drop down list
-[WIP] Time completed for applicants
-[WIP] Server pricing for deployment - AWS? 
+[WIP]      [] State -drop down list
+[WIP]      [] Time completed for applicants
+[TBD]      [] Server pricing for deployment - AWS? 
 
 
 
