@@ -43,7 +43,7 @@ public class UserController {
     public List<String> getSchools() throws FileNotFoundException {
         File schools = new File(System.getProperty("user.dir")+"\\src\\main\\resources\\Schools.txt");
         Scanner scan = new Scanner(schools);
-        List<String> school = new ArrayList<String>();
+        List<String> school = new ArrayList<>();
         while (scan.hasNextLine())
         {
 
@@ -55,13 +55,25 @@ public class UserController {
     public List<String> getMajor() throws FileNotFoundException {
         File majors = new File(System.getProperty("user.dir")+"\\src\\main\\resources\\Major.txt");
         Scanner scan = new Scanner(majors);
-        List<String> major = new ArrayList<String>();
+        List<String> major = new ArrayList<>();
         while (scan.hasNextLine())
         {
 
             major.add(scan.nextLine());
         }
         return major;
+    }
+    @GetMapping("/state")
+    public List<String> getState() throws FileNotFoundException {
+        File majors = new File(System.getProperty("user.dir")+"\\src\\main\\resources\\States.txt");
+        Scanner scan = new Scanner(majors);
+        List<String> states = new ArrayList<>();
+        while (scan.hasNextLine())
+        {
+
+            states.add(scan.nextLine());
+        }
+        return states;
     }
 
     @PostMapping("/create")

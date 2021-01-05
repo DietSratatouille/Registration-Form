@@ -17,6 +17,7 @@ CREATE TABLE User (
                 last_Name VARCHAR(45) NOT NULL,
                 email VARCHAR(45) NOT NULL,
                 tel_Num VARCHAR(13) NOT NULL,
+                state VARCHAR(20) NOT NULL,
                 zip_Code VARCHAR(12) NOT NULL,
                 gender VARCHAR(11) NOT NULL,
                 -- hispanic, latino, spanish  

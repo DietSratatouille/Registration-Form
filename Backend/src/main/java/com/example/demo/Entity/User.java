@@ -27,6 +27,9 @@ public class User {
     @Column(name = "tel_Num")
     private String telephoneNum;
 
+    @Column(name = "state")
+    private String state;
+
     @Column(name = "zip_Code")
     private String zipcode;
 
@@ -124,7 +127,7 @@ public class User {
 
 
     public User(String firstName, String lastName, String email,
-                String telephoneNum, String zipcode, String gender,
+                String telephoneNum, String state,String zipcode, String gender,
                 String hls, boolean americanIndian, boolean asian,
                 boolean black, boolean pacific, boolean white, boolean non_Ethnic,
                 String veteran, String degree, String edu,String major,
@@ -138,6 +141,7 @@ public class User {
         this.lastName = lastName;
         this.email = email;
         this.telephoneNum = telephoneNum;
+        this.state=state;
         this.zipcode = zipcode;
         this.gender = gender;
         this.hls = hls;
@@ -213,6 +217,14 @@ public class User {
 
     public void setTelephoneNum(String telephoneNum) {
         this.telephoneNum = telephoneNum;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getZipcode() {

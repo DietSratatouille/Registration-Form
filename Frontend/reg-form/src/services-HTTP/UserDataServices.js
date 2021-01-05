@@ -14,6 +14,10 @@ class UserDataServices {
         return axios.get(`http://localhost:8080/major`)
     }
 
+    listOfState(){
+        return axios.get(`http://localhost:8080/state`)
+    }
+
     //POST Request(s)
     createUser(user){
         return axios.post(`http://localhost:8080/create`, user)
