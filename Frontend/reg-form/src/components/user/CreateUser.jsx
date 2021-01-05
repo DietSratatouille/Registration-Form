@@ -8,11 +8,12 @@ class User extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userID: '' ,
+            userID: '',
             firstName: '',
             lastName: '',
             email: '',
             telephoneNum: '',
+            state:'',
             zipcode: '',
             gender: '',
             hls: '',
@@ -25,7 +26,7 @@ class User extends Component {
             veteran: '',
             degree: '',
             edu: '',
-            major:'',
+            major: '',
             graduationDate: '',
             cPlusPlus: false,
             cSharp: false,
@@ -44,8 +45,9 @@ class User extends Component {
             startDate: '',
             ad: '',
             referral: '',
-            schools:[],
-            majors:[]
+            states:[],
+            schools: [],
+            majors: []
 
 
         }
@@ -61,28 +63,32 @@ class User extends Component {
 
     //component mount
 
-componentDidMount() {
-    UserDataServices.listOfSchools().then(response => {
+    componentDidMount() {
+        UserDataServices.listOfSchools().then(response => {
 
-        for (const [index, value] of response.data.entries()) {
-        this.state.schools.push({ value:value,label:value})
+            for (const [index, value] of response.data.entries()) {
+                this.state.schools.push({value: value, label: value})
 
-        }
-
-
-    })
-    UserDataServices.listOfMajors().then(response => {
-
-    for (const [index, value] of response.data.entries()) {
-    this.state.majors.push({value:value,label:value})
-
-    }
+            }
 
 
-})
+        })
+        UserDataServices.listOfMajors().then(response => {
+
+            for (const [index, value] of response.data.entries()) {
+                this.state.majors.push({value: value, label: value})
+
+            }
+        })
+        UserDataServices.listOfState().then(response => {
+
+            for (const [index, value] of response.data.entries()) {
+                this.state.states.push({value: value, label: value})
+
+            }
+        })
 
 }
-
     // handle change
     handleChange(event){
         const {name, value, type, checked} = event.target
@@ -264,7 +270,32 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">5. Zip Code*
+                            <label className="form-check-label">5. State*
+                                <br/>
+
+                                <Select
+                                    options={this.state.states}
+                                    name="edu"
+                                    type="text"
+                                    value={this.state.state}
+                                    searchable={true}
+                                    dropdownHandle={true}
+                                    input={{color:"white"}}
+                                    style={{color:"black",backgroundColor:"white"}}
+                                    closeOnSelect="true"
+                                    onChange={this.handleChangeSchools}
+                                    emptyMessage="State Not Found"
+                                    placeholder="Select your State"
+                                    required={true}
+                                />
+
+
+                            </label>
+
+                            <br/>
+                            <br/>
+
+                        <label className="form-check-label">6. Zip Code*
                             <br/>
                             <input
                                 className="form-control "
@@ -279,7 +310,7 @@ componentDidMount() {
                         <br />
                         <br/>
 
-                        <label className="form-check-label">6. What gender do you identify as? (if any)
+                        <label className="form-check-label">7. What gender do you identify as? (if any)
                             <br/>
                             <input
                                 // className="
@@ -326,7 +357,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">7. Are you of Hispanic, Latino, or Spanish origin?
+                        <label className="form-check-label">8. Are you of Hispanic, Latino, or Spanish origin?
                             <br/>
                             <input
                                 className="Radio-Input"
@@ -361,7 +392,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">8. How would you describe yourself?
+                        <label className="form-check-label">9. How would you describe yourself?
                             <br/>
                             <input
                                 className="Check-Input"
@@ -420,7 +451,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">9. Are you a veteran?*
+                        <label className="form-check-label">10. Are you a veteran?*
                             <br/>
                             <input
                                 className="Radio-Input"
@@ -447,7 +478,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">10. Highest completed degree of education*
+                        <label className="form-check-label">11. Highest completed degree of education*
                             <br/>
                             <input
                                 className="Radio-Input"
@@ -497,7 +528,7 @@ componentDidMount() {
                         <br/>
 
 
-                        <label className="form-check-label">11. Major*
+                        <label className="form-check-label">12. Major*
                             <br/>
 
                             <Select
@@ -520,7 +551,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">12. School/University name*
+                        <label className="form-check-label">13. School/University name*
                             <br/>
 
                             <Select
@@ -545,7 +576,7 @@ componentDidMount() {
                             <br/>
                             <br/>
 
-                        <label className="form-check-label">13. Graduation Date/Expected Graduation Date*
+                        <label className="form-check-label">14. Graduation Date/Expected Graduation Date*
                             <br/>
                             <input
                                 className="form-control datepicker"
@@ -561,7 +592,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">14. What programming languages do you have experience with, if any?*
+                        <label className="form-check-label">15. What programming languages do you have experience with, if any?*
                             <br/>
                             <input
                                 className="Check-Input"
@@ -666,7 +697,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">15. Are you willing to relocate anywhere within the US for customer based engagements?*
+                        <label className="form-check-label">16. Are you willing to relocate anywhere within the US for customer based engagements?*
                             <br/>
                             <input
                                 className="Radio-Input"
@@ -704,7 +735,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">16. Are you authorized to work lawfully in the United States for Pyramid Academy?*
+                        <label className="form-check-label">17. Are you authorized to work lawfully in the United States for Pyramid Academy?*
                             <br/>
                             <input
                                 className="Radio-Input"
@@ -731,7 +762,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">17. Will you now or in the future require Pyramid Academy to commence (“sponsor”)
+                        <label className="form-check-label">18. Will you now or in the future require Pyramid Academy to commence (“sponsor”)
                             an immigration case in order to employ you (for example, H-1B or other employment-based immigration case)?
                             This is sometimes called “sponsorship” for an employment-based visa status.*
                             <br/>
@@ -760,7 +791,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">18. What is the earliest date you are available or interested in joining Pyramid Academy?*
+                        <label className="form-check-label">19. What is the earliest date you are available or interested in joining Pyramid Academy?*
                             <br/>
                             <input
                                 className="form-control "
@@ -775,7 +806,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label className="form-check-label">19. How did you hear about us?*
+                        <label className="form-check-label">20. How did you hear about us?*
                             <br/>
                             <input
                                 className="Radio-Input"
@@ -859,7 +890,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label>20. If someone referred you, what is their name?
+                        <label>21. If someone referred you, what is their name?
                             <br/>
                             <input
                                 className="form-control "
@@ -873,7 +904,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <label>21. [WIP] Upload your updated resume.*
+                        <label>22. [WIP] Upload your updated resume.*
                             <br/>
                             <div className="custom-file">
                                 <input
