@@ -115,6 +115,13 @@ class User extends Component {
         })
 
     }
+    handleChangeState=option=>{
+        option.valueOf().map(result=>{
+            this.setState({state: result.value},function (){console.log(this.state.state)})
+
+        })
+
+    }
 
 
 
@@ -283,7 +290,7 @@ class User extends Component {
                                     input={{color:"white"}}
                                     style={{color:"black",backgroundColor:"white"}}
                                     closeOnSelect="true"
-                                    onChange={this.handleChangeSchools}
+                                    onChange={this.handleChangeState}
                                     emptyMessage="State Not Found"
                                     placeholder="Select your State"
                                     required={true}
