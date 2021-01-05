@@ -1,6 +1,7 @@
 import React,{Component, useState} from 'react';
 import UserDataServices from "../../services-HTTP/UserDataServices";
 import  '../../bootstrap.css'
+import '../../CreateUser.css'
 import Select from "react-dropdown-select";
 
 class User extends Component {
@@ -188,7 +189,7 @@ componentDidMount() {
                     <form onSubmit={this.createUser}>
                         {/*<div className="jumbotron table" style={{textAlign:"left"}}>*/}
                         <div className="container">
-                        <div className="form-group" style={{backgroundColor:"black", color:'white', textAlign:'left', paddingLeft:'25px', padding:'30px'}}>
+                        <div className="form-group" style={{backgroundColor:"#202429", color:'white', textAlign:'left', paddingLeft:'25px', padding:'30px'}}>
                             {/*<label className="form-check-label">ID**/}
                             {/*    <br/>*/}
                             {/*    <input*/}
@@ -890,7 +891,7 @@ componentDidMount() {
                         <br/>
                         <br/>
 
-                        <button className="btn btn-link text-input" style={{color:"blue"}} type="submit">Submit</button>
+                        <button className="btn btn-link" style={{}} type="submit">Submit</button>
                             <br/>
                             <br/>
                         </div>
