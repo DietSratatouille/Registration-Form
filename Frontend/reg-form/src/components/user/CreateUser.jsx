@@ -764,7 +764,7 @@ class User extends Component {
 
                         <label className="form-check-label">18. Will you now or in the future require Pyramid Academy to commence (“sponsor”)
                             an immigration case in order to employ you (for example, H-1B or other employment-based immigration case)?
-                            This is sometimes called “sponsorship” for an employment-based visa status.*
+                            This is sometimes called “sponsorship” for an employment-based visa status?*
                             <br/>
                             <input
                                 className="Radio-Input"
