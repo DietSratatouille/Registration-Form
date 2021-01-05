@@ -13,7 +13,7 @@ class User extends Component {
             lastName: '',
             email: '',
             telephoneNum: '',
-            state:'',
+            state: '',
             zipcode: '',
             gender: '',
             hls: '',
@@ -58,6 +58,7 @@ class User extends Component {
         this.createUser = this.createUser.bind(this)
         this.handleChangeSchools = this.handleChangeSchools.bind(this)
         this.handleChangeMajors = this.handleChangeMajors.bind(this)
+        this.handleChangeState=this.handleChangeState.bind(this)
 
     }
 
@@ -159,6 +160,7 @@ class User extends Component {
                 degree: this.state.degree,
                 edu: this.state.edu,
                 major:this.state.major,
+                state:this.state.state,
                 graduationDate: this.state.graduationDate,
                 cPlusPlus: this.state.cPlusPlus,
                 cSharp: this.state.cSharp,
@@ -282,7 +284,7 @@ class User extends Component {
 
                                 <Select
                                     options={this.state.states}
-                                    name="edu"
+                                    name="state"
                                     type="text"
                                     value={this.state.state}
                                     searchable={true}
