@@ -23,8 +23,8 @@ ___________________________________
 
 
 --------------------------------------------
-[WIP]      [] State -drop down list
-[WIP]      [] Time completed for applicants
+[WIP]      [Ed] State -drop down list
+[WIP]      [Sterl] Time completed for applicants
 [TBD]      [] Server pricing for deployment - AWS? 
 
 
